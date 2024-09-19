@@ -1,0 +1,45 @@
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "bookNow": "Book Now"
+  },
+  "hero": {
+    "title": "Achieve Your Health Goals with Personalized Nutrition",
+    "subtitle": "Transform your life with expert guidance and tailored meal plans.",
+    "cta": "Book a Free Consultation"
+  },
+  "benefits": {
+    "title": "How We Help You Thrive",
+    "sustainable": {
+      "title": "Sustainable Weight Management",
+      "description": "Achieve and maintain your ideal weight with personalized strategies."
+    },
+    "balanced": {
+      "title": "Balanced Nutrition",
+      "description": "Get the right nutrients your body needs for optimal health."
+    },
+    "energy": {
+      "title": "Improved Energy & Vitality",
+      "description": "Feel energized and vibrant throughout your day."
+    }
+  },
+  "about": {
+    "title": "About Your Nutritionist",
+    "description": "With over 10 years of experience, I'm passionate about helping people achieve their health goals through personalized nutrition plans. My approach combines the latest scientific research with practical, sustainable lifestyle changes.",
+    "certifications": {
+      "title": "Certifications",
+      "cn": "Certified Nutritionist (CN)",
+      "masters": "Master's in Human Nutrition",
+      "sports": "Specialization in Sports Nutrition"
+    },
+    "cta": "Learn More About Me"
+  },
+    "linkTree": {
+    "title": "NutriLife",
+    "subtitle": "Your Path to Healthier Living"
+  }
+}

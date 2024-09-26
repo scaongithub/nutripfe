@@ -16,18 +16,10 @@ const LinkTree = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary to-secondary flex flex-col items-center justify-center p-4">
       <div className="max-w-md w-full bg-white rounded-lg shadow-2xl overflow-hidden">
-        <div className="relative h-40 bg-primary">
-          <svg className="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none">
-            <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white"/>
-            <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white"/>
-          </svg>
-          <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2">
-            <div className="w-24 h-24 bg-primary border-4 border-white rounded-full overflow-hidden">
-              <img src="/api/placeholder/96/96?text=NL" alt="Profile" className="object-cover w-full h-full" />
-            </div>
-          </div>
+        <div className="relative h-40 bg-primary flex items-center justify-center">
+          <img src="/logo.png" alt="NutriLife Logo" className="h-24 w-auto" />
         </div>
-        <div className="pt-16 pb-8 px-4 text-center">
+        <div className="pt-6 pb-8 px-4 text-center">
           <h2 className="text-2xl font-bold text-gray-900">{t('linkTree.title')}</h2>
           <p className="text-sm text-gray-600 mt-1">{t('linkTree.subtitle')}</p>
         </div>

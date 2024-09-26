@@ -52,6 +52,45 @@
       "title": "Supporto Chat 24/7",
       "description": "Ottieni risposte alle tue domande sulla nutrizione in qualsiasi momento con il nostro servizio di chat dedicato."
     }
+
+  },
+    "benefits": {
+    "mainTitle": "Ti offro l'aiuto di cui hai bisogno",
+    "subtitle": "Scegli cosa vuoi migliorare",
+    "ctaButton": "Inizia la tua trasformazione ora",
+    "weightManagement": {
+      "title": "Gestione del Peso",
+      "loseWeight": "Perdere peso",
+      "loseFat": "Perdere grasso",
+      "gainWeight": "Aumentare di peso"
+    },
+    "bodyComposition": {
+      "title": "Composizione Corporea",
+      "overweight": "Sovrappeso",
+      "obesity": "Obesità",
+      "buildMuscle": "Sviluppare muscoli"
+    },
+    "eatingDisorders": {
+      "title": "Disturbi Alimentari",
+      "anorexia": "Anoressia",
+      "bulimia": "Bulimia"
+    },
+    "chronicConditions": {
+      "title": "Condizioni Croniche",
+      "diabetes": "Diabete",
+      "highBloodPressure": "Pressione alta",
+      "highCholesterol": "Colesterolo alto"
+    },
+    "metabolicHealth": {
+      "title": "Salute Metabolica",
+      "insulinResistance": "Resistenza all'insulina",
+      "highTriglycerides": "Trigliceridi alti"
+    },
+    "energyVitality": {
+      "title": "Energia e Vitalità",
+      "feelMoreActive": "Sentirsi più attivi",
+      "recoverEnergy": "Recuperare la mia energia"
+    }
   }
 
 }

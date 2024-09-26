@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { GB, IT, ES } from 'country-flag-icons/react/3x2';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,12 @@ const Navbar = () => {
     { name: t('navbar.about'), path: '/about' },
     { name: t('navbar.blog'), path: '/blog' },
     { name: t('navbar.contact'), path: '/contact' },
+  ];
+
+  const languages = [
+    { code: 'en', name: 'English', flag: GB },
+    { code: 'it', name: 'Italiano', flag: IT },
+    { code: 'es', name: 'Español', flag: ES },
   ];
 
   return (
@@ -44,14 +51,26 @@ const Navbar = () => {
             <button className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
               {t('navbar.bookNow')}
             </button>
-            <select
-              onChange={(e) => changeLanguage(e.target.value)}
-              className="ml-4 border-gray-300 rounded-md text-base"
-            >
-              <option value="en">EN</option>
-              <option value="it">IT</option>
-              <option value="es">ES</option>
-            </select>
+            <div className="ml-4 relative">
+              <select
+                onChange={(e) => changeLanguage(e.target.value)}
+                className="appearance-none bg-white border border-gray-300 rounded-md pl-3 pr-10 py-2 text-base focus:outline-none focus:ring-primary focus:border-primary"
+              >
+                {languages.map((lang) => (
+                  <option key={lang.code} value={lang.code}>
+                    {lang.name}
+                  </option>
+                ))}
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                {languages.find(lang => lang.code === i18n.language)?.flag &&
+                  React.createElement(languages.find(lang => lang.code === i18n.language).flag, {
+                    title: languages.find(lang => lang.code === i18n.language).name,
+                    className: "h-4 w-6"
+                  })
+                }
+              </div>
+            </div>
           </div>
           <div className="-mr-2 flex items-center sm:hidden">
             <button
@@ -90,9 +109,12 @@ const Navbar = () => {
                 onChange={(e) => changeLanguage(e.target.value)}
                 className="block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
               >
-                <option value="en">EN</option>
-                <option value="it">IT</option>
-                <option value="es">ES</option>
+                {languages.map((lang) => (
+                  <option key={lang.code} value={lang.code} className="flex items-center">
+                    <span className="mr-2">{React.createElement(lang.flag, { className: "h-4 w-6 inline-block mr-2" })}</span>
+                    {lang.name}
+                  </option>
+                ))}
               </select>
             </div>
           </div>

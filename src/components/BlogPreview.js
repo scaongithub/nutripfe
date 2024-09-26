@@ -1,14 +1,26 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const BlogPreview = () => {
   const { t } = useTranslation();
 
   const posts = [
-    { title: t('blog.post1.title'), excerpt: t('blog.post1.excerpt') },
-    { title: t('blog.post2.title'), excerpt: t('blog.post2.excerpt') },
-    { title: t('blog.post3.title'), excerpt: t('blog.post3.excerpt') },
+    {
+      title: "Fueling Your 20s: Nutrition Tips for Young Adults on the Go",
+      excerpt: "Are you a young adult juggling work, social life, and maybe even studies? Your nutrition doesn't have to suffer! Here are quick tips to keep you energized...",
+      category: "Young Adults"
+    },
+    {
+      title: "Nourishing Your Prime: Nutrition for Women in Their 40s and 50s",
+      excerpt: "Ladies, as we enter our 40s and 50s, our nutritional needs evolve. Here's how to keep your body thriving...",
+      category: "Women's Health"
+    },
+    {
+      title: "Building More Than Muscle: Nutrition for the Dedicated Gym-Goer",
+      excerpt: "Fellas, nutrition is just as important as your workout routine. Here's how to eat for optimal gains...",
+      category: "Fitness Nutrition"
+    }
   ];
 
   return (
@@ -24,7 +36,7 @@ const BlogPreview = () => {
               <div>
                 <a href="#" className="inline-block">
                   <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-primary text-white">
-                    {t('blog.category')}
+                    {post.category}
                   </span>
                 </a>
               </div>

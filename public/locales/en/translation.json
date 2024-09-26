@@ -42,5 +42,11 @@
     "linkTree": {
     "title": "NutriLife",
     "subtitle": "Your Path to Healthier Living"
+  }, "blog": {
+    "title": "Latest Nutrition Insights",
+    "subtitle": "Expert advice for every stage of life",
+    "authorName": "NutriLife Team",
+    "publishDate": "Sep 30, 2024",
+    "readTime": "5 min read"
   }
 }

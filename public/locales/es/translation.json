@@ -1,4 +1,20 @@
 {
+  "blog": {
+    "title": "Últimas Perspectivas Nutricionales",
+    "subtitle": "Consejos de expertos para cada etapa de la vida",
+    "authorName": "Equipo NutriLife",
+    "publishDate": "30 set 2024",
+    "readTime": "5 min de lectura"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Acerca de",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "linktree": "Enlaces",
+    "bookNow": "Reservar ahora"
+  },
   "hero": {
     "title": "Transforma tu vida con un plan de nutrición personalizado",
     "subtitle": "Descubre el poder de una alimentación equilibrada, diseñada para ti. ¡Empieza hoy!",
@@ -7,14 +23,6 @@
   "linkTree": {
     "title": "NutriLife",
     "subtitle": "Tu Camino hacia una Vida más Saludable"
-  },
-    "navbar": {
-    "home": "Inicio",
-    "services": "Servicios",
-    "about": "Acerca de",
-    "blog": "Blog",
-    "contact": "Contacto",
-    "linktree": "Enlaces",
-    "bookNow": "Reservar ahora"
-    }
+  }
+  // ... other translations ...
 }

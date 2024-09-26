@@ -1,12 +1,10 @@
 {
-  "hero": {
-    "title": "Trasforma la tua vita con un piano nutrizionale personalizzato",
-    "subtitle": "Scopri il potere di un'alimentazione equilibrata, pensata su misura per te. Inizia oggi!",
-    "cta": "Prenota la tua consulenza ora"
-  },
-  "linkTree": {
-    "title": "NutriLife",
-    "subtitle": "Il Tuo Percorso verso uno Stile di Vita più Sano"
+  "blog": {
+    "title": "Ultime Prospettive Nutrizionali",
+    "subtitle": "Consigli di esperti per ogni fase della vita",
+    "authorName": "Team NutriLife",
+    "publishDate": "16 mar 2024",
+    "readTime": "5 min di lettura"
   },
   "navbar": {
     "home": "Home",
@@ -16,5 +14,15 @@
     "contact": "Contatti",
     "linktree": "Link",
     "bookNow": "Prenota ora"
+  },
+  "hero": {
+    "title": "Trasforma la tua vita con un piano nutrizionale personalizzato",
+    "subtitle": "Scopri il potere di un'alimentazione equilibrata, pensata su misura per te. Inizia oggi!",
+    "cta": "Prenota la tua consulenza ora"
+  },
+  "linkTree": {
+    "title": "NutriLife",
+    "subtitle": "Il Tuo Percorso verso uno Stile di Vita più Sano"
   }
+  // ... other translations ...
 }

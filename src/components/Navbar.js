@@ -18,6 +18,7 @@ const Navbar = () => {
     { name: t('navbar.about'), path: '/about' },
     { name: t('navbar.blog'), path: '/blog' },
     { name: t('navbar.contact'), path: '/contact' },
+    { name: t('navbar.linktree'), path: '/links' }, // Added LinkTree item
   ];
 
   const languages = [

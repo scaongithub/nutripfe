@@ -7,5 +7,14 @@
   "linkTree": {
     "title": "NutriLife",
     "subtitle": "Tu Camino hacia una Vida más Saludable"
-  }
+  },
+    "navbar": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Acerca de",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "linktree": "Enlaces",
+    "bookNow": "Reservar ahora"
+    }
 }

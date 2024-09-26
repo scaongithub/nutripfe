@@ -48,5 +48,34 @@
     "authorName": "NutriLife Team",
     "publishDate": "Sep 30, 2024",
     "readTime": "5 min read"
+  },
+   "services": {
+    "title": "Personalized Online Nutrition Services",
+    "subtitle": "Transform your health with expert guidance, tailored to your unique needs and lifestyle",
+    "ctaButton": "Start Your Nutrition Journey",
+    "virtualConsultation": {
+      "title": "One-on-One Virtual Consultations",
+      "description": "Get personalized nutrition advice from the comfort of your home with our secure video consultations."
+    },
+    "customMealPlans": {
+      "title": "Customized Meal Plans",
+      "description": "Receive weekly meal plans tailored to your preferences, dietary requirements, and health goals."
+    },
+    "progressTracking": {
+      "title": "Digital Progress Tracking",
+      "description": "Monitor your progress with our intuitive app, including metrics tracking and progress photos."
+    },
+    "groupCoaching": {
+      "title": "Interactive Group Coaching",
+      "description": "Join like-minded individuals in our virtual group sessions for motivation and shared learning."
+    },
+    "nutritionWorkshops": {
+      "title": "Live Online Workshops",
+      "description": "Participate in engaging workshops on various nutrition topics to enhance your knowledge."
+    },
+    "ongoingSupport": {
+      "title": "24/7 Chat Support",
+      "description": "Get answers to your nutrition questions anytime with our dedicated chat support."
+    }
   }
 }

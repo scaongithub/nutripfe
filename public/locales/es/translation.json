@@ -23,6 +23,35 @@
   "linkTree": {
     "title": "NutriLife",
     "subtitle": "Tu Camino hacia una Vida más Saludable"
+  },
+    "services": {
+    "title": "Servicios de Nutrición Personalizados en Línea",
+    "subtitle": "Transforma tu salud con orientación experta, adaptada a tus necesidades y estilo de vida únicos",
+    "ctaButton": "Comienza Tu Viaje Nutricional",
+    "virtualConsultation": {
+      "title": "Consultas Virtuales Individuales",
+      "description": "Obtén asesoramiento nutricional personalizado desde la comodidad de tu hogar con nuestras consultas por video seguras."
+    },
+    "customMealPlans": {
+      "title": "Planes de Comidas Personalizados",
+      "description": "Recibe planes de comidas semanales adaptados a tus preferencias, requisitos dietéticos y objetivos de salud."
+    },
+    "progressTracking": {
+      "title": "Seguimiento Digital del Progreso",
+      "description": "Monitorea tu progreso con nuestra aplicación intuitiva, incluyendo seguimiento de métricas y fotos de progreso."
+    },
+    "groupCoaching": {
+      "title": "Coaching Grupal Interactivo",
+      "description": "Únete a personas con ideas afines en nuestras sesiones grupales virtuales para motivación y aprendizaje compartido."
+    },
+    "nutritionWorkshops": {
+      "title": "Talleres en Línea en Vivo",
+      "description": "Participa en talleres interactivos sobre diversos temas de nutrición para mejorar tus conocimientos."
+    },
+    "ongoingSupport": {
+      "title": "Soporte por Chat 24/7",
+      "description": "Obtén respuestas a tus preguntas sobre nutrición en cualquier momento con nuestro servicio de chat dedicado."
+    }
   }
 
 }

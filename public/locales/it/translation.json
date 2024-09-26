@@ -23,6 +23,35 @@
   "linkTree": {
     "title": "NutriLife",
     "subtitle": "Il Tuo Percorso verso uno Stile di Vita più Sano"
+  },
+    "services": {
+    "title": "Servizi di Nutrizione Personalizzati Online",
+    "subtitle": "Trasforma la tua salute con una guida esperta, su misura per le tue esigenze e il tuo stile di vita unici",
+    "ctaButton": "Inizia il Tuo Percorso Nutrizionale",
+    "virtualConsultation": {
+      "title": "Consulenze Virtuali One-to-One",
+      "description": "Ricevi consigli nutrizionali personalizzati dal comfort di casa tua con le nostre consulenze video sicure."
+    },
+    "customMealPlans": {
+      "title": "Piani Alimentari Personalizzati",
+      "description": "Ricevi piani alimentari settimanali adattati alle tue preferenze, esigenze dietetiche e obiettivi di salute."
+    },
+    "progressTracking": {
+      "title": "Monitoraggio Digitale dei Progressi",
+      "description": "Monitora i tuoi progressi con la nostra app intuitiva, incluso il tracciamento delle metriche e le foto dei progressi."
+    },
+    "groupCoaching": {
+      "title": "Coaching di Gruppo Interattivo",
+      "description": "Unisciti a persone che la pensano come te nelle nostre sessioni di gruppo virtuali per motivazione e apprendimento condiviso."
+    },
+    "nutritionWorkshops": {
+      "title": "Workshop Online dal Vivo",
+      "description": "Partecipa a workshop coinvolgenti su vari temi nutrizionali per migliorare le tue conoscenze."
+    },
+    "ongoingSupport": {
+      "title": "Supporto Chat 24/7",
+      "description": "Ottieni risposte alle tue domande sulla nutrizione in qualsiasi momento con il nostro servizio di chat dedicato."
+    }
   }
 
 }

@@ -29,7 +29,7 @@ const Navbar = () => {
 
   // Function to get the current language object
   const getCurrentLanguage = () => {
-    const currentLangCode = i18n.language.split('-')[0]; // This handles cases like 'en-US'
+    const currentLangCode = i18n.language ? i18n.language.split('-')[0] : 'en'; // Default to 'en' if i18n.language is undefined
     return languages.find(lang => lang.code === currentLangCode) || languages[0]; // Default to first language if not found
   };
 

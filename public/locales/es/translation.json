@@ -91,5 +91,8 @@
       "feelMoreActive": "Sentirme más activo",
       "recoverEnergy": "Recuperar mi energía"
     }
+  },
+  "common": {
+    "websiteName": "TODOenBALANCE"
   }
 }

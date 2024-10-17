@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { GB, IT, ES } from 'country-flag-icons/react/3x2';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -35,6 +36,10 @@ const Navbar = () => {
 
   const currentLang = getCurrentLanguage();
 
+  const handleBookNowClick = () => {
+    navigate('/booking');
+  };
+
   return (
       <nav className="bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +63,8 @@ const Navbar = () => {
               ))}
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:items-center">
-              <button className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
+              <button onClick={handleBookNowClick}
+                      className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
                 {t('navbar.bookNow')}
               </button>
               <div className="ml-4 relative">

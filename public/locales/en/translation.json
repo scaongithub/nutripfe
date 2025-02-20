@@ -14,27 +14,42 @@
     "cta": "Book a Free Consultation"
   },
   "about": {
-    "title": "About Your Nutritionist",
-    "description": "With over 10 years of experience, I'm passionate about helping people achieve their health goals through personalized nutrition plans. My approach combines the latest scientific research with practical, sustainable lifestyle changes.",
-    "certifications": {
-      "title": "Certifications",
+    "title": "Clinical Nutritionist & Health Coach",
+    "subtitle": "Transform your life through personalized nutrition",
+    "description": "Hello! I'm Paola Michelle, a Mexican nutritionist passionate about wellness and health, currently living in Italy. My professional journey began in Monterrey, Mexico, where I graduated with a degree in Nutrition from the Faculty of Public Health and Nutrition at the Universidad Autónoma de Nuevo León. Driven by the desire to deepen my knowledge, I completed a Master's degree in Clinical Nutrition and Endocrinology at the Institute of Nutrition and Health Sciences, endorsed by the Catholic University of Murcia in Spain. My mission is to accompany you on your journey towards a healthier life, providing personalized nutritional guidance tailored to your needs and goals.",
+    "credentials": {
+      "degree": "Bachelor's Degree in Nutrition",
+      "masters": "Master's in Clinical Nutrition and Endocrinology",
+      "exchange": "International Exchange Program",
       "cn": "Certified Nutritionist (CN)",
-      "masters": "Master's in Human Nutrition",
       "sports": "Specialization in Sports Nutrition"
     },
-    "cta": "Learn More About Me"
+    "experience": {
+      "title": "Professional Experience",
+      "years": "Years of Experience",
+      "clients": "Satisfied Clients",
+      "specializations": "Specializations"
+    },
+    "certifications": {
+      "title": "Certifications & Training",
+      "clinical": "Clinical Nutrition",
+      "sports": "Sports Nutrition",
+      "wellness": "Wellness Coaching"
+    },
+    "cta": "Book a Consultation"
   },
-    "linkTree": {
+  "linkTree": {
     "title": "NutriLife",
     "subtitle": "Your Path to Healthier Living"
-  }, "blog": {
+  },
+  "blog": {
     "title": "Latest Nutrition Insights",
     "subtitle": "Expert advice for every stage of life",
     "authorName": "NutriLife Team",
     "publishDate": "Sep 30, 2024",
     "readTime": "5 min read"
   },
-   "services": {
+  "services": {
     "title": "Personalized Online Nutrition Services",
     "subtitle": "Transform your health with expert guidance, tailored to your unique needs and lifestyle",
     "ctaButton": "Start Your Nutrition Journey",
@@ -63,7 +78,7 @@
       "description": "Get answers to your nutrition questions anytime with our dedicated chat support."
     }
   },
-    "benefits": {
+  "benefits": {
     "mainTitle": "I offer the help you need",
     "subtitle": "Choose what you want to improve",
     "ctaButton": "Start your transformation now",
@@ -100,19 +115,19 @@
       "feelMoreActive": "Feel more active",
       "recoverEnergy": "Recover my energy"
     },
-      "title": "How We Help You Thrive",
-      "sustainable": {
-        "title": "Sustainable Weight Management",
-        "description": "Achieve and maintain your ideal weight with personalized strategies."
-      },
-      "balanced": {
-        "title": "Balanced Nutrition",
-        "description": "Get the right nutrients your body needs for optimal health."
-      },
-      "energy": {
-        "title": "Improved Energy & Vitality",
-        "description": "Feel energized and vibrant throughout your day."
-      }
+    "title": "How We Help You Thrive",
+    "sustainable": {
+      "title": "Sustainable Weight Management",
+      "description": "Achieve and maintain your ideal weight with personalized strategies."
+    },
+    "balanced": {
+      "title": "Balanced Nutrition",
+      "description": "Get the right nutrients your body needs for optimal health."
+    },
+    "energy": {
+      "title": "Improved Energy & Vitality",
+      "description": "Feel energized and vibrant throughout your day."
+    }
   },
   "common": {
     "websiteName": "TODOenBALANCE"

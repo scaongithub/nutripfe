@@ -20,11 +20,36 @@
     "subtitle": "Scopri il potere di un'alimentazione equilibrata, pensata su misura per te. Inizia oggi!",
     "cta": "Prenota la tua consulenza ora"
   },
+  "about": {
+    "title": "Nutrizionista Clinica & Health Coach",
+    "subtitle": "Trasforma la tua vita attraverso una nutrizione personalizzata",
+    "description": "Ciao! Sono Paola Michelle, una nutrizionista messicana appassionata di benessere e salute, attualmente residente in Italia. Il mio percorso professionale è iniziato a Monterrey, Messico, dove mi sono laureata in Nutrizione presso la Facoltà di Salute Pubblica e Nutrizione dell'Università Autonoma di Nuevo León. Spinta dal desiderio di approfondire le mie conoscenze, ho conseguito un Master in Nutrizione Clinica ed Endocrinologia presso l'Istituto di Scienze della Nutrizione e della Salute, riconosciuto dall'Università Cattolica di Murcia in Spagna. La mia missione è accompagnarti nel tuo percorso verso una vita più sana, fornendoti una guida nutrizionale personalizzata adatta alle tue esigenze e ai tuoi obiettivi.",
+    "credentials": {
+      "degree": "Laurea in Nutrizione",
+      "masters": "Master in Nutrizione Clinica ed Endocrinologia",
+      "exchange": "Programma di Scambio Internazionale",
+      "cn": "Nutrizionista Certificata (CN)",
+      "sports": "Specializzazione in Nutrizione Sportiva"
+    },
+    "experience": {
+      "title": "Esperienza Professionale",
+      "years": "Anni di Esperienza",
+      "clients": "Clienti Soddisfatti",
+      "specializations": "Specializzazioni"
+    },
+    "certifications": {
+      "title": "Certificazioni e Formazione",
+      "clinical": "Nutrizione Clinica",
+      "sports": "Nutrizione Sportiva",
+      "wellness": "Coaching del Benessere"
+    },
+    "cta": "Prenota una Consulenza"
+  },
   "linkTree": {
     "title": "NutriLife",
     "subtitle": "Il Tuo Percorso verso uno Stile di Vita più Sano"
   },
-    "services": {
+  "services": {
     "title": "Servizi di Nutrizione Personalizzati Online",
     "subtitle": "Trasforma la tua salute con una guida esperta, su misura per le tue esigenze e il tuo stile di vita unici",
     "ctaButton": "Inizia il Tuo Percorso Nutrizionale",
@@ -52,9 +77,8 @@
       "title": "Supporto Chat 24/7",
       "description": "Ottieni risposte alle tue domande sulla nutrizione in qualsiasi momento con il nostro servizio di chat dedicato."
     }
-
   },
-    "benefits": {
+  "benefits": {
     "mainTitle": "Ti offro l'aiuto di cui hai bisogno",
     "subtitle": "Scegli cosa vuoi migliorare",
     "ctaButton": "Inizia la tua trasformazione ora",

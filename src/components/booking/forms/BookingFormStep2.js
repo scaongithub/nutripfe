@@ -9,7 +9,7 @@ const BookingFormStep2 = ({ bookingData, onConfirm, onBack }) => {
 
     const handlePayment = () => {
         // Replace 'YourPayPalUsername' with your actual PayPal.me username
-        const paypalLink = `https://www.paypal.com/paypalme/YourPayPalUsername/${amount}`;
+        const paypalLink = `https://www.paypal.com/paypalme/carloascarsini/${amount}`;
 
         // Open PayPal in a new window
         window.open(paypalLink, '_blank');

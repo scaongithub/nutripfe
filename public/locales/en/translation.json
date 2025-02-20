@@ -131,5 +131,23 @@
   },
   "common": {
     "websiteName": "TODOenBALANCE"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Success stories from around the world",
+    "italian": "I started my journey with Paola three months ago and the results are incredible. Not only did I reach my ideal weight, but I also learned a new way to approach food. Her knowledge of Italian cuisine allowed her to adapt the nutritional plan to my habits.",
+    "mexican": "Paola not only helped me improve my nutrition, but also taught me how to maintain my Mexican culinary traditions in a healthy way. Her understanding of our food culture made the process natural and sustainable.",
+    "american": "Working with Paola has been transformative. She understands the challenges of a busy lifestyle and helped me develop healthy eating habits that fit my schedule. Her approach is both professional and personalizedーexactly what I needed."
+  },
+  "leadMagnet": {
+    "title": "Get Your Free Nutrition Guide",
+    "subtitle": "Download '7-Day Mediterranean-Inspired Meal Plan' + Quick Recipe Book",
+    "cta": "Get Your Free Guide Now",
+    "benefit1": "Complete 7-day meal planning guide",
+    "benefit2": "Shopping list included",
+    "benefit3": "15 quick and healthy recipes",
+    "benefit4": "Nutritional information for each meal",
+    "guidePreview": "Nutrition Guide Preview"
   }
+
 }

@@ -31,3 +31,5 @@ export const useBooking = () => {
     }
     return context;
 };
+
+export default BookingContext;

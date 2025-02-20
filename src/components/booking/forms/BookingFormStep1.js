@@ -1,11 +1,9 @@
-// BookingFormStep1.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useBooking } from './BookingContext';
+import SocialLogin from './SocialLogin';
 
-const BookingFormStep1 = () => {
+const BookingFormStep1 = ({ initialData, onBack }) => {
     const { t } = useTranslation();
-    const { setBookingData, setCurrentStep } = useBooking();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -13,19 +11,60 @@ const BookingFormStep1 = () => {
         concerns: ''
     });
 
+    // Initialize social login SDKs
+    useEffect(() => {
+        // Initialize Google Sign-In
+        window.gapi?.load('auth2', () => {
+            window.gapi.auth2.init({
+                client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID
+            });
+        });
+
+        // Initialize Facebook SDK
+        window.fbAsyncInit = function() {
+            window.FB.init({
+                appId: process.env.REACT_APP_FACEBOOK_APP_ID,
+                cookie: true,
+                xfbml: true,
+                version: 'v18.0'
+            });
+        };
+
+        // Load Facebook SDK
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        // Initialize Sign in with Apple
+        // Note: Apple Sign In requires additional setup in your Apple Developer account
+    }, []);
+
+    const handleSocialLogin = (userData) => {
+        setFormData(prev => ({
+            ...prev,
+            name: userData.name || '',
+            email: userData.email || ''
+        }));
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        setBookingData((prev) => ({ ...prev, ...formData }));
-        setCurrentStep(2);
+        // Handle form submission
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-900">
-                {t('booking.personalInfo')}
-            </h3>
+        <div className="space-y-6">
+            <SocialLogin onSocialLogin={handleSocialLogin} />
 
-            <div className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
+                <h3 className="text-lg font-semibold text-gray-900">
+                    {t('booking.personalInfo')}
+                </h3>
+
                 <div>
                     <label className="block text-sm font-medium text-gray-700">
                         {t('booking.name')}
@@ -76,14 +115,25 @@ const BookingFormStep1 = () => {
                         rows="4"
                     />
                 </div>
-            </div>
 
-            <button
-                type="submit"
-                className="w-full bg-primary text-white py-2 px-4 rounded-md hover:bg-primary-dark"
-            >
-                {t('booking.continue')}
-            </button>
-        </form>
+                <div className="flex justify-between space-x-4">
+                    <button
+                        type="button"
+                        onClick={onBack}
+                        className="w-1/2 bg-gray-100 text-gray-700 py-2 px-4 rounded-md hover:bg-gray-200"
+                    >
+                        {t('booking.back')}
+                    </button>
+                    <button
+                        type="submit"
+                        className="w-1/2 bg-primary text-white py-2 px-4 rounded-md hover:bg-primary-dark"
+                    >
+                        {t('booking.continue')}
+                    </button>
+                </div>
+            </form>
+        </div>
     );
 };
+
+export default BookingFormStep1;

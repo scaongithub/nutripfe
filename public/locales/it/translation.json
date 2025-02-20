@@ -118,5 +118,22 @@
   },
   "common": {
     "websiteName": "TODOenBALANCE"
+  },
+  "testimonials": {
+    "title": "Cosa Dicono i Nostri Clienti",
+    "subtitle": "Storie di successo da tutto il mondo",
+    "italian": "Ho iniziato il mio percorso con Paola tre mesi fa e i risultati sono incredibili. Non solo ho raggiunto il mio peso ideale, ma ho anche imparato un nuovo modo di approcciarmi al cibo. La sua conoscenza della cucina italiana le ha permesso di adattare il piano nutrizionale alle mie abitudini.",
+    "mexican": "Paola non mi ha solo aiutato a migliorare la mia alimentazione, ma mi ha anche insegnato a mantenere le mie tradizioni culinarie messicane in modo sano. La sua comprensione della nostra cultura alimentare ha reso il processo naturale e sostenibile.",
+    "american": "Lavorare con Paola è stato trasformativo. Comprende le sfide di uno stile di vita impegnato e mi ha aiutato a sviluppare abitudini alimentari sane che si adattano al mio programma. Il suo approccio è sia professionale che personalizzato, esattamente ciò di cui avevo bisogno."
+  },
+  "leadMagnet": {
+    "title": "Ottieni La Tua Guida Nutrizionale Gratuita",
+    "subtitle": "Scarica 'Piano Alimentare di 7 Giorni Ispirato alla Dieta Mediterranea' + Libro di Ricette Veloci",
+    "cta": "Ottieni La Tua Guida Gratuita Ora",
+    "benefit1": "Guida completa per la pianificazione dei pasti di 7 giorni",
+    "benefit2": "Lista della spesa inclusa",
+    "benefit3": "15 ricette veloci e salutari",
+    "benefit4": "Informazioni nutrizionali per ogni pasto",
+    "guidePreview": "Anteprima della guida nutrizionale"
   }
 }

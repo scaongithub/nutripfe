@@ -1,9 +1,7 @@
+// src/pages/BookingPage.js
 import React, { useState } from 'react';
-import { BookingProvider } from '../components/booking/BookingContext';
 import AvailabilityCalendar from '../components/AvailabilityCalendar';
-import BookingFormStep1 from '../components/booking/forms/BookingFormStep1';
-import BookingFormStep2 from '../components/booking/forms/BookingFormStep2';
-import BookingSuccess from '../components/booking/forms/BookingSuccess';
+import BookingForm from '../components/booking/forms/BookingForm';
 
 const BookingPage = () => {
     const [selectedDate, setSelectedDate] = useState(null);
@@ -31,59 +29,91 @@ const BookingPage = () => {
     };
 
     return (
-        <BookingProvider>
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <h1 className="text-3xl font-bold text-gray-900 mb-8">Book a Consultation</h1>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h1 className="text-3xl font-bold text-gray-900 mb-8">Book a Consultation</h1>
 
-                {!showForm ? (
-                    <>
-                        <AvailabilityCalendar
-                            onDateSelect={handleDateSelect}
-                            onTimeSelect={handleTimeSelect}
-                            selectedDate={selectedDate}
-                            selectedTime={selectedTime}
-                        />
+            <div className="space-y-8">
+                {/* Calendar Section */}
+                <div>
+                    <h2 className="text-xl font-semibold text-gray-900 mb-4">Select Date and Time</h2>
+                    <AvailabilityCalendar
+                        onDateSelect={handleDateSelect}
+                        onTimeSelect={handleTimeSelect}
+                        selectedDate={selectedDate}
+                        selectedTime={selectedTime}
+                    />
+                </div>
 
-                        <div className="mt-8">
-                            <h2 className="text-xl font-semibold text-gray-900 mb-4">Select Duration</h2>
-                            <div className="flex space-x-4">
-                                <button
-                                    onClick={() => handleDurationChange(30)}
-                                    className={`px-4 py-2 rounded-md ${duration === 30 ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700'}`}
-                                >
-                                    30 minutes
-                                </button>
-                                <button
-                                    onClick={() => handleDurationChange(60)}
-                                    className={`px-4 py-2 rounded-md ${duration === 60 ? 'bg-primary text-white' : 'bg-gray-200 text-gray-700'}`}
-                                >
-                                    1 hour
-                                </button>
-                            </div>
-                        </div>
-
+                {/* Duration Selection */}
+                <div>
+                    <h2 className="text-xl font-semibold text-gray-900 mb-4">Select Duration</h2>
+                    <div className="flex space-x-4">
                         <button
-                            onClick={handleBooking}
-                            disabled={!selectedDate || !selectedTime}
-                            className="mt-8 px-6 py-3 bg-primary text-white rounded-md disabled:opacity-50"
+                            onClick={() => handleDurationChange(30)}
+                            className={`px-4 py-2 rounded-md ${
+                                duration === 30
+                                    ? 'bg-primary text-white'
+                                    : 'bg-gray-200 text-gray-700'
+                            }`}
                         >
-                            Continue to Booking
+                            30 minutes - €50
                         </button>
-                    </>
-                ) : (
-                    <div className="mt-8">
-                        {selectedDate && selectedTime && (
-                            <>
-                                <BookingFormStep1
-                                    initialData={{ date: selectedDate, time: selectedTime, duration: duration }}
-                                    onBack={() => setShowForm(false)}
-                                />
-                            </>
-                        )}
+                        <button
+                            onClick={() => handleDurationChange(60)}
+                            className={`px-4 py-2 rounded-md ${
+                                duration === 60
+                                    ? 'bg-primary text-white'
+                                    : 'bg-gray-200 text-gray-700'
+                            }`}
+                        >
+                            60 minutes - €100
+                        </button>
+                    </div>
+                </div>
+
+                {/* Booking Button */}
+                <div>
+                    <button
+                        onClick={handleBooking}
+                        disabled={!selectedDate || !selectedTime}
+                        className="w-full bg-primary text-white py-3 px-4 rounded-md hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        {selectedDate && selectedTime
+                            ? `Book Consultation for ${selectedTime}`
+                            : 'Select a date and time'}
+                    </button>
+                </div>
+
+                {/* Summary */}
+                {selectedDate && selectedTime && (
+                    <div className="bg-gray-50 p-4 rounded-md">
+                        <h3 className="font-medium text-gray-900">Booking Summary</h3>
+                        <p className="text-gray-600">
+                            Date: {selectedDate.toLocaleDateString()}
+                        </p>
+                        <p className="text-gray-600">
+                            Time: {selectedTime}
+                        </p>
+                        <p className="text-gray-600">
+                            Duration: {duration} minutes
+                        </p>
+                        <p className="text-gray-600">
+                            Price: €{duration === 30 ? '50' : '100'}
+                        </p>
                     </div>
                 )}
             </div>
-        </BookingProvider>
+
+            {/* Booking Form Modal */}
+            {showForm && (
+                <BookingForm
+                    date={selectedDate}
+                    time={selectedTime}
+                    duration={duration}
+                    onClose={() => setShowForm(false)}
+                />
+            )}
+        </div>
     );
 };
 

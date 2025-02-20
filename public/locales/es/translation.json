@@ -20,11 +20,36 @@
     "subtitle": "Descubre el poder de una alimentación equilibrada, diseñada para ti. ¡Empieza hoy!",
     "cta": "Agenda tu consulta ahora"
   },
+  "about": {
+    "title": "Nutrióloga Clínica & Health Coach",
+    "subtitle": "Transforma tu vida a través de una nutrición personalizada",
+    "description": "¡Hola! Soy Paola Michelle, una nutrióloga mexicana apasionada por el bienestar y la salud, actualmente viviendo en Italia. Mi trayectoria profesional comenzó en Monterrey, México, donde me gradué como Licenciada en Nutrición de la Facultad de Salud Pública y Nutrición de la Universidad Autónoma de Nuevo León. Con el deseo de profundizar mis conocimientos, realicé una Maestría en Nutrición Clínica y Endocrinología con el Instituto de Ciencias Nutrición y Salud, avalado por la Universidad Católica de Murcia en España. Mi misión es acompañarte en tu camino hacia una vida más saludable, brindándote asesoramiento nutricional personalizado que se adapte a tus necesidades y objetivos.",
+    "credentials": {
+      "degree": "Licenciatura en Nutrición",
+      "masters": "Maestría en Nutrición Clínica y Endocrinología",
+      "exchange": "Programa de Intercambio Internacional",
+      "cn": "Nutrióloga Certificada (CN)",
+      "sports": "Especialización en Nutrición Deportiva"
+    },
+    "experience": {
+      "title": "Experiencia Profesional",
+      "years": "Años de Experiencia",
+      "clients": "Clientes Satisfechos",
+      "specializations": "Especializaciones"
+    },
+    "certifications": {
+      "title": "Certificaciones y Formación",
+      "clinical": "Nutrición Clínica",
+      "sports": "Nutrición Deportiva",
+      "wellness": "Coaching de Bienestar"
+    },
+    "cta": "Agenda una Consulta"
+  },
   "linkTree": {
     "title": "NutriLife",
     "subtitle": "Tu Camino hacia una Vida más Saludable"
   },
-    "services": {
+  "services": {
     "title": "Servicios de Nutrición Personalizados en Línea",
     "subtitle": "Transforma tu salud con orientación experta, adaptada a tus necesidades y estilo de vida únicos",
     "ctaButton": "Comienza Tu Viaje Nutricional",
@@ -52,7 +77,6 @@
       "title": "Soporte por Chat 24/7",
       "description": "Obtén respuestas a tus preguntas sobre nutrición en cualquier momento con nuestro servicio de chat dedicado."
     }
-
   },
   "benefits": {
     "mainTitle": "Te ofrezco la ayuda que necesitas",

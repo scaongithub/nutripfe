@@ -1,31 +1,26 @@
 {
-  "blog": {
-    "title": "Ultime Prospettive Nutrizionali",
-    "subtitle": "Consigli di esperti per ogni fase della vita",
-    "authorName": "Team NutriLife",
-    "publishDate": "16 mar 2024",
-    "readTime": "5 min di lettura"
-  },
   "navbar": {
     "home": "Home",
     "services": "Servizi",
-    "about": "Chi siamo",
+    "about": "Chi Sono",
     "blog": "Blog",
     "contact": "Contatti",
     "linktree": "Link",
-    "bookNow": "Prenota ora"
+    "bookNow": "Prenota Ora",
+    "workInProgress": "Sito in Costruzione – Alcune funzionalità potrebbero essere incomplete",
+    "viewGithub": "Visualizza su GitHub"
   },
   "hero": {
-    "title": "Trasforma la tua vita con un piano nutrizionale personalizzato",
-    "subtitle": "Scopri il potere di un'alimentazione equilibrata, pensata su misura per te. Inizia oggi!",
-    "cta": "Prenota la tua consulenza ora"
+    "title": "Raggiungi i Tuoi Obiettivi di Salute con la Nutrizione Personalizzata",
+    "subtitle": "Trasforma la tua vita con la guida di esperti e piani alimentari su misura.",
+    "cta": "Prenota una Consulenza Gratuita"
   },
   "about": {
     "title": "Nutrizionista Clinica & Health Coach",
-    "subtitle": "Trasforma la tua vita attraverso una nutrizione personalizzata",
-    "description": "Ciao! Sono Paola Michelle, una nutrizionista messicana appassionata di benessere e salute, attualmente residente in Italia. Il mio percorso professionale è iniziato a Monterrey, Messico, dove mi sono laureata in Nutrizione presso la Facoltà di Salute Pubblica e Nutrizione dell'Università Autonoma di Nuevo León. Spinta dal desiderio di approfondire le mie conoscenze, ho conseguito un Master in Nutrizione Clinica ed Endocrinologia presso l'Istituto di Scienze della Nutrizione e della Salute, riconosciuto dall'Università Cattolica di Murcia in Spagna. La mia missione è accompagnarti nel tuo percorso verso una vita più sana, fornendoti una guida nutrizionale personalizzata adatta alle tue esigenze e ai tuoi obiettivi.",
+    "subtitle": "Trasforma la tua vita attraverso la nutrizione personalizzata",
+    "description": "Ciao! Sono Paola Michelle, una nutrizionista messicana appassionata di benessere e salute, attualmente vivo in Italia. Il mio percorso professionale è iniziato a Monterrey, in Messico, dove mi sono laureata in Nutrizione presso la Facoltà di Salute Pubblica e Nutrizione dell'Università Autonoma di Nuevo León. Spinta dal desiderio di approfondire le mie conoscenze, ho completato un Master in Nutrizione Clinica ed Endocrinologia presso l'Istituto di Scienze della Nutrizione e della Salute, riconosciuto dall'Università Cattolica di Murcia in Spagna. La mia missione è accompagnarti nel tuo percorso verso una vita più sana, fornendoti una guida nutrizionale personalizzata adattata alle tue esigenze e ai tuoi obiettivi.",
     "credentials": {
-      "degree": "Laurea Magristrale in Nutrizione",
+      "degree": "Master in Nutrizione",
       "masters": "Master in Nutrizione Clinica ed Endocrinologia",
       "exchange": "Programma di Scambio Internazionale",
       "cn": "Nutrizionista Certificata (CN)",
@@ -38,24 +33,31 @@
       "specializations": "Specializzazioni"
     },
     "certifications": {
-      "title": "Certificazioni e Formazione",
+      "title": "Certificazioni & Formazione",
       "clinical": "Nutrizione Clinica",
       "sports": "Nutrizione Sportiva",
-      "wellness": "Coaching del Benessere"
+      "wellness": "Wellness Coaching"
     },
     "cta": "Prenota una Consulenza"
   },
   "linkTree": {
     "title": "NutriLife",
-    "subtitle": "Il Tuo Percorso verso uno Stile di Vita più Sano"
+    "subtitle": "Il Tuo Percorso verso una Vita più Sana"
+  },
+  "blog": {
+    "title": "Ultimi Approfondimenti sulla Nutrizione",
+    "subtitle": "Consigli di esperti per ogni fase della vita",
+    "authorName": "Team NutriLife",
+    "publishDate": "30 Set 2024",
+    "readTime": "5 min di lettura"
   },
   "services": {
-    "title": "Servizi di Nutrizione Personalizzati Online",
-    "subtitle": "Trasforma la tua salute con una guida esperta, su misura per le tue esigenze e il tuo stile di vita unici",
+    "title": "Servizi di Nutrizione Online Personalizzati",
+    "subtitle": "Trasforma la tua salute con la guida di esperti, adattata alle tue esigenze e al tuo stile di vita",
     "ctaButton": "Inizia il Tuo Percorso Nutrizionale",
     "virtualConsultation": {
-      "title": "Consulenze Virtuali One-to-One",
-      "description": "Ricevi consigli nutrizionali personalizzati dal comfort di casa tua con le nostre consulenze video sicure."
+      "title": "Consulenze Virtuali Individuali",
+      "description": "Ricevi consigli nutrizionali personalizzati dalla comodità di casa tua con le nostre consulenze video sicure."
     },
     "customMealPlans": {
       "title": "Piani Alimentari Personalizzati",
@@ -63,23 +65,23 @@
     },
     "progressTracking": {
       "title": "Monitoraggio Digitale dei Progressi",
-      "description": "Monitora i tuoi progressi con la nostra app intuitiva, incluso il tracciamento delle metriche e le foto dei progressi."
+      "description": "Monitora i tuoi progressi con la nostra app intuitiva, inclusi il monitoraggio delle metriche e le foto dei progressi."
     },
     "groupCoaching": {
       "title": "Coaching di Gruppo Interattivo",
-      "description": "Unisciti a persone che la pensano come te nelle nostre sessioni di gruppo virtuali per motivazione e apprendimento condiviso."
+      "description": "Unisciti a persone con interessi simili nelle nostre sessioni di gruppo virtuali per motivazione e apprendimento condiviso."
     },
     "nutritionWorkshops": {
       "title": "Workshop Online dal Vivo",
-      "description": "Partecipa a workshop coinvolgenti su vari temi nutrizionali per migliorare le tue conoscenze."
+      "description": "Partecipa a workshop coinvolgenti su vari argomenti nutrizionali per ampliare le tue conoscenze."
     },
     "ongoingSupport": {
-      "title": "Supporto Chat 24/7",
-      "description": "Ottieni risposte alle tue domande sulla nutrizione in qualsiasi momento con il nostro servizio di chat dedicato."
+      "title": "Supporto via Chat 24/7",
+      "description": "Ottieni risposte alle tue domande sulla nutrizione in qualsiasi momento con il nostro supporto chat dedicato."
     }
   },
   "benefits": {
-    "mainTitle": "Ti offro l'aiuto di cui hai bisogno",
+    "mainTitle": "Offro l'aiuto di cui hai bisogno",
     "subtitle": "Scegli cosa vuoi migliorare",
     "ctaButton": "Inizia la tua trasformazione ora",
     "weightManagement": {
@@ -92,7 +94,7 @@
       "title": "Composizione Corporea",
       "overweight": "Sovrappeso",
       "obesity": "Obesità",
-      "buildMuscle": "Sviluppare muscoli"
+      "buildMuscle": "Costruire muscoli"
     },
     "eatingDisorders": {
       "title": "Disturbi Alimentari",
@@ -112,8 +114,21 @@
     },
     "energyVitality": {
       "title": "Energia e Vitalità",
-      "feelMoreActive": "Sentirsi più attivi",
-      "recoverEnergy": "Recuperare la mia energia"
+      "feelMoreActive": "Sentirsi più attivo",
+      "recoverEnergy": "Recuperare energia"
+    },
+    "title": "Come Ti Aiutiamo a Prosperare",
+    "sustainable": {
+      "title": "Gestione del Peso Sostenibile",
+      "description": "Raggiungi e mantieni il tuo peso ideale con strategie personalizzate."
+    },
+    "balanced": {
+      "title": "Nutrizione Equilibrata",
+      "description": "Ottieni i nutrienti giusti di cui il tuo corpo ha bisogno per una salute ottimale."
+    },
+    "energy": {
+      "title": "Miglioramento dell'Energia e Vitalità",
+      "description": "Sentiti energico e vivace durante tutta la giornata."
     }
   },
   "common": {
@@ -123,17 +138,93 @@
     "title": "Cosa Dicono i Nostri Clienti",
     "subtitle": "Storie di successo da tutto il mondo",
     "italian": "Ho iniziato il mio percorso con Paola tre mesi fa e i risultati sono incredibili. Non solo ho raggiunto il mio peso ideale, ma ho anche imparato un nuovo modo di approcciarmi al cibo. La sua conoscenza della cucina italiana le ha permesso di adattare il piano nutrizionale alle mie abitudini.",
-    "mexican": "Paola non mi ha solo aiutato a migliorare la mia alimentazione, ma mi ha anche insegnato a mantenere le mie tradizioni culinarie messicane in modo sano. La sua comprensione della nostra cultura alimentare ha reso il processo naturale e sostenibile.",
-    "american": "Lavorare con Paola è stato trasformativo. Comprende le sfide di uno stile di vita impegnato e mi ha aiutato a sviluppare abitudini alimentari sane che si adattano al mio programma. Il suo approccio è sia professionale che personalizzato, esattamente ciò di cui avevo bisogno."
+    "mexican": "Paola non solo mi ha aiutato a migliorare la mia alimentazione, ma mi ha anche insegnato a mantenere le mie tradizioni culinarie messicane in modo sano. La sua comprensione della nostra cultura alimentare ha reso il processo naturale e sostenibile.",
+    "american": "Lavorare con Paola è stato trasformativo. Comprende le sfide di uno stile di vita frenetico e mi ha aiutato a sviluppare abitudini alimentari sane che si adattano al mio programma. Il suo approccio è sia professionale che personalizzato, esattamente ciò di cui avevo bisogno."
   },
   "leadMagnet": {
-    "title": "Ottieni La Tua Guida Nutrizionale Gratuita",
-    "subtitle": "Scarica 'Piano Alimentare di 7 Giorni Ispirato alla Dieta Mediterranea' + Libro di Ricette Veloci",
-    "cta": "Ottieni La Tua Guida Gratuita Ora",
+    "title": "Ottieni la Tua Guida Nutrizionale Gratuita",
+    "subtitle": "Scarica 'Piano Alimentare di 7 Giorni Ispirato alla Dieta Mediterranea' + Ricettario Veloce",
+    "cta": "Ottieni la Tua Guida Gratuita Ora",
     "benefit1": "Guida completa per la pianificazione dei pasti di 7 giorni",
     "benefit2": "Lista della spesa inclusa",
-    "benefit3": "15 ricette veloci e salutari",
+    "benefit3": "15 ricette sane e veloci",
     "benefit4": "Informazioni nutrizionali per ogni pasto",
-    "guidePreview": "Anteprima della guida nutrizionale"
+    "guidePreview": "Anteprima della Guida Nutrizionale"
+  },
+  "faq": {
+    "title": "Domande Frequenti",
+    "subtitle": "Tutto ciò che devi sapere sui nostri servizi di nutrizione",
+    "moreQuestions": "Non hai trovato quello che cerchi?",
+    "contactUs": "Contattaci per maggiori informazioni",
+    "question1": "Cosa succede durante la mia prima consulenza nutrizionale?",
+    "answer1": "La tua consulenza iniziale includerà una valutazione completa della tua salute attuale, delle abitudini alimentari e degli obiettivi. Discuteremo della tua storia medica, del tuo stile di vita e di eventuali preoccupazioni nutrizionali. Questa sessione dura tipicamente 60 minuti e si conclude con un piano personalizzato per aiutarti a raggiungere i tuoi obiettivi di salute.",
+    "question2": "Quanto tempo ci vuole per vedere risultati con la nutrizione personalizzata?",
+    "answer2": "I risultati variano in base agli obiettivi individuali e alla costanza. Molti clienti notano miglioramenti in energia e digestione entro 2-3 settimane. Gli obiettivi di gestione del peso mostrano generalmente progressi misurabili entro 4-6 settimane con la corretta aderenza al piano nutrizionale. Ricorda che i cambiamenti sostenibili richiedono tempo, e adatteremo il tuo piano secondo necessità durante il tuo percorso.",
+    "question3": "Con quale frequenza dovrei programmare gli appuntamenti di follow-up?",
+    "answer3": "Per risultati ottimali, generalmente consiglio follow-up bisettimanali durante il primo mese, poi sessioni mensili man mano che progredisci. Questi appuntamenti di follow-up ci permettono di monitorare i tuoi progressi, affrontare eventuali sfide e adattare il tuo piano nutrizionale di conseguenza. Sessioni regolari aiutano a mantenere la responsabilità e forniscono il supporto necessario per un cambiamento duraturo.",
+    "question4": "Accomodate esigenze dietetiche speciali come diete vegane, senza glutine o chetogeniche?",
+    "answer4": "Assolutamente! Mi specializzo nella personalizzazione di piani nutrizionali per varie preferenze e requisiti dietetici. Che tu segua una dieta vegetale, senza glutine, chetogenica, mediterranea o altra dieta specializzata, o che tu abbia allergie e intolleranze alimentari, lavorerò con te per creare un approccio nutrizionale che si allinei alle tue esigenze garantendo una nutrizione ottimale.",
+    "question5": "Come possono le consulenze nutrizionali aiutare con condizioni mediche come diabete o ipertensione?",
+    "answer5": "La nutrizione gioca un ruolo cruciale nella gestione delle condizioni croniche. Per condizioni come diabete, ipertensione e colesterolo alto, creo piani alimentari specializzati che aiutano a regolare la glicemia, la pressione sanguigna e i livelli lipidici. Mentre lavoro in collaborazione con i tuoi operatori sanitari, la terapia nutrizionale può spesso ridurre la dipendenza dai farmaci e migliorare i marker clinici attraverso strategie dietetiche mirate.",
+    "question6": "Qual è la differenza tra perdita di peso e gestione sostenibile del peso?",
+    "answer6": "La perdita di peso si concentra sulla riduzione a breve termine del peso corporeo, mentre la gestione sostenibile del peso crea abitudini durature che mantengono il tuo peso ideale a lungo termine. Il mio approccio enfatizza quest'ultimo, insegnandoti abilità pratiche, affrontando i modelli comportamentali e implementando cambiamenti graduali che diventano parte del tuo stile di vita, piuttosto che seguire diete restrittive che spesso portano a cicli di perdita e ripresa di peso.",
+    "question7": "Puoi fornire indicazioni nutrizionali per tutta la mia famiglia, compresi i bambini?",
+    "answer7": "Sì! La nutrizione familiare è incredibilmente importante per stabilire abitudini sane precocemente. Offro servizi di nutrizione centrati sulla famiglia che rispondono alle esigenze uniche di ogni membro della famiglia, creando al contempo piani alimentari pratici che funzionano per tutti. Per i bambini, mi concentro sulla promozione di relazioni sane con il cibo, sul sostegno alla crescita e allo sviluppo adeguati e sulla prevenzione di problemi legati alla nutrizione.",
+    "question8": "Qual è la differenza tra un nutrizionista e un dietista?",
+    "answer8": "Mentre entrambi i professionisti lavorano nella nutrizione, un dietista registrato (RD) ha completato programmi educativi accreditati, formazione clinica e superato un esame di registrazione. Il termine \"nutrizionista\" varia nella regolamentazione a seconda della località. Io possiedo un Master in Nutrizione Clinica ed Endocrinologia e sono certificata per fornire consulenza nutrizionale completa, sebbene le credenziali specifiche e la terminologia possano differire per paese."
+  },
+  "contact": {
+    "title": "Contattaci",
+    "subtitle": "Hai domande sulla nutrizione o sei pronto a iniziare il tuo percorso di salute? Raggiungici attraverso uno di questi canali:",
+    "getInTouch": "Mettiti in Contatto",
+    "email": "Email",
+    "emailDesc": "Invia richieste dettagliate per risposte personalizzate",
+    "phone": "Telefono",
+    "phoneDesc": "Disponibile per chiamate dal lunedì al venerdì, 10:00-17:00 CET",
+    "whatsappDesc": "Risposte rapide nei giorni feriali dalle 9:00 alle 18:00 CET",
+    "chatNow": "Chatta Ora",
+    "locations": "Le Nostre Sedi",
+    "office1": "Ufficio di New York",
+    "office2": "Ufficio di Milano",
+    "hours": "Lun-Ven: 9:00-17:00",
+    "preferForm": "Preferisci inviare un messaggio dettagliato?",
+    "useForm": "Usa il Nostro Modulo di Contatto"
+  },
+  "booking": {
+    "confirmDetails": "Conferma i Tuoi Dettagli",
+    "confirmBooking": "Conferma Prenotazione",
+    "personalInfo": "Informazioni Personali",
+    "name": "Nome Completo",
+    "email": "Indirizzo Email",
+    "phone": "Numero di Telefono",
+    "concerns": "Problemi di Salute / Note",
+    "back": "Torna Indietro",
+    "continue": "Continua",
+    "date": "Data",
+    "time": "Ora",
+    "duration": "Durata",
+    "minutes": "minuti",
+    "amount": "Importo",
+    "price": "Prezzo",
+    "payNow": "Paga Ora",
+    "paypalInfo": "Sarai reindirizzato a PayPal per completare il pagamento in modo sicuro.",
+    "confirmed": "Prenotazione Confermata!",
+    "emailSent": "Abbiamo inviato la conferma a",
+    "appointmentDetails": "Dettagli dell'Appuntamento",
+    "nextSteps": "Controlla la tua email per le istruzioni di preparazione e i dettagli della videochiamata.",
+    "backToHome": "Torna alla Home",
+    "proceedToPayment": "Procedi al Pagamento",
+    "cancel": "Annulla",
+    "quickSignIn": "Accedi rapidamente con",
+    "continueWithGoogle": "Continua con Google",
+    "continueWithFacebook": "Continua con Facebook",
+    "or": "o"
+  },
+  "trustIndicators": {
+    "title": "Affidabile & Certificato",
+    "certification1": "Nutrizionista Certificato",
+    "certification2": "Associazione Wellness Coach",
+    "certification3": "Esperto di Nutrizione Sportiva",
+    "certification4": "Terapia Nutrizionale Medica"
   }
 }

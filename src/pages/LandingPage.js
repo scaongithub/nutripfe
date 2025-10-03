@@ -9,6 +9,7 @@ import BlogPreview from '../components/BlogPreview';
 import Contact from './Contact';
 import TrustIndicators from '../components/TrustIndicators';
 import FAQ from '../components/FAQ';
+import Shop from '../components/Shop';
 
 function LandingPage() {
   return (
@@ -18,6 +19,7 @@ function LandingPage() {
       <About />
       <Testimonials />
       <Services />
+      <Shop />
       <LeadMagnet />
       <BlogPreview />
       <Contact />

@@ -17,7 +17,7 @@ const LinkTree = () => {
     <div className="min-h-screen bg-gradient-to-br from-primary to-secondary flex flex-col items-center justify-center p-4">
       <div className="max-w-md w-full bg-white rounded-lg shadow-2xl overflow-hidden">
         <div className="relative h-40 bg-primary flex items-center justify-center">
-          <img src="/logo.png" alt="NutriLife Logo" className="h-24 w-auto" />
+          <img src="/logo.png" alt="Todo en Balance Logo" className="h-24 w-auto" />
         </div>
         <div className="pt-6 pb-8 px-4 text-center">
           <h2 className="text-2xl font-bold text-gray-900">{t('linkTree.title')}</h2>

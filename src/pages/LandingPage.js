@@ -6,7 +6,6 @@ import Testimonials from '../components/Testimonials';
 import Services from './Services';
 import LeadMagnet from '../components/LeadMagnet';
 import BlogPreview from '../components/BlogPreview';
-import Contact from './Contact';
 import TrustIndicators from '../components/TrustIndicators';
 import FAQ from '../components/FAQ';
 import Shop from '../components/Shop';
@@ -22,7 +21,6 @@ function LandingPage() {
       <Shop />
       <LeadMagnet />
       <BlogPreview />
-      <Contact />
       <TrustIndicators />
       <FAQ />
     </div>

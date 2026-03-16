@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import {Link, useNavigate} from 'react-router-dom';
 import { Menu, X, Construction } from 'lucide-react';
 import { GB, IT, ES } from 'country-flag-icons/react/3x2';
+import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +19,7 @@ const Navbar = () => {
     { name: t('navbar.services'), path: '/services' },
     { name: t('navbar.about'), path: '/about' },
     { name: t('navbar.blog'), path: '/blog' },
-    { name: t('navbar.contact'), path: '/contact' },
-    { name: t('navbar.linktree'), path: '/links' },
+    { name: t('navbar.diets', 'Diets'), path: '/diets' },
   ];
 
   const languages = [
@@ -71,39 +71,51 @@ const Navbar = () => {
                 <span className="subtitle-paola relative -bottom-3 left-1">by Paola Michelle</span>
               </Link>
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              {navItems.map((item) => (
-                  <Link
-                      key={item.name}
-                      to={item.path}
-                      className="text-gray-500 hover:text-primary px-3 py-2 rounded-md text-sm font-medium"
-                  >
-                    {item.name}
-                  </Link>
-              ))}
-            </div>
             <div className="hidden sm:ml-6 sm:flex sm:items-center">
+              <NavigationMenu.Root className="relative z-10 flex w-full justify-center">
+                <NavigationMenu.List className="flex items-center space-x-2">
+                  {navItems.map((item) => (
+                    <NavigationMenu.Item key={item.name}>
+                      <NavigationMenu.Link asChild>
+                        <Link
+                          to={item.path}
+                          className="bg-gray-50 text-gray-700 hover:bg-gray-100 hover:text-primary border border-gray-200 block select-none rounded-md px-4 py-2 text-sm font-medium leading-none no-underline outline-none transition-colors transition-all duration-200 shadow-sm"
+                        >
+                          {item.name}
+                        </Link>
+                      </NavigationMenu.Link>
+                    </NavigationMenu.Item>
+                  ))}
+                </NavigationMenu.List>
+              </NavigationMenu.Root>
+            </div>
+            <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-4">
               <button onClick={handleBookNowClick}
-                      className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
+                      className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded-md transition duration-300 shadow-sm">
                 {t('navbar.bookNow')}
               </button>
-              <div className="ml-4 relative">
+              <div className="relative flex items-center bg-gray-50 border border-gray-200 rounded-md p-1 focus-within:ring-2 focus-within:ring-primary focus-within:border-transparent">
+                <div className="flex items-center pl-2 pr-1 pointer-events-none">
+                  {React.createElement(currentLang.flag, {
+                    title: currentLang.name,
+                    className: "h-4 w-6 rounded-sm shadow-sm"
+                  })}
+                </div>
                 <select
                     onChange={(e) => changeLanguage(e.target.value)}
                     value={currentLang.code}
-                    className="appearance-none bg-white border border-gray-300 rounded-md pl-3 pr-10 py-2 text-base focus:outline-none focus:ring-primary focus:border-primary"
+                    className="appearance-none bg-transparent border-none py-1.5 pl-1 pr-6 text-sm font-medium text-gray-700 focus:outline-none focus:ring-0 cursor-pointer"
                 >
                   {languages.map((lang) => (
                       <option key={lang.code} value={lang.code}>
-                        {lang.name}
+                        {lang.code.toUpperCase()}
                       </option>
                   ))}
                 </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  {React.createElement(currentLang.flag, {
-                    title: currentLang.name,
-                    className: "h-4 w-6"
-                  })}
+                <div className="pointer-events-none absolute right-2 flex items-center">
+                  <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                  </svg>
                 </div>
               </div>
             </div>

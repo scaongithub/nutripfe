@@ -5,7 +5,7 @@ import LandingPage from './pages/LandingPage';
 import ServicesPage from './pages/Services';
 import AboutPage from './pages/About';
 import BlogPage from './pages/Blog';
-import Contact from './pages/Contact';
+import DietsPage from './pages/Diets';
 import LinkTreePage from './pages/LinkTree';
 import BookingPage from "./pages/BookingPage";
 
@@ -19,7 +19,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/blog" element={<BlogPage />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/diets" element={<DietsPage />} />
           <Route path="/links" element={<LinkTreePage />} />
           <Route path="/booking" element={<BookingPage />} />
         </Routes>

@@ -5,13 +5,18 @@ import CommentSection from './CommentSection';
 const HealthyHabitsBlogPost = () => {
     return (
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <h1 className="text-3xl font-bold text-gray-900 mb-6">Shaping Tomorrow's Health: The Impact of Childhood
-                Habits</h1>
-            <div className="flex items-center text-gray-500 text-sm mb-6">
-                <img src="/path-to-paola-photo.jpg" alt="Paola Michelle" className="w-10 h-10 rounded-full mr-3"/>
-                <span className="mr-3">By Paola Michelle</span>
-                <span>|</span>
-                <time className="ml-3" dateTime="2024-04-15">April 15, 2024</time>
+            <div className="flex items-center gap-4 mb-6">
+                <div className="bg-red-100 p-3 rounded-2xl flex items-center justify-center text-3xl shadow-sm">
+                    🍎
+                </div>
+                <h1 className="text-3xl font-bold text-gray-900">Shaping Tomorrow's Health: The Impact of Childhood Habits</h1>
+            </div>
+            
+            <div className="flex items-center text-gray-500 text-sm mb-6 bg-gray-50 p-3 rounded-lg w-fit">
+                <img src="/path-to-paola-photo.jpg" alt="Paola Michelle" className="w-10 h-10 rounded-full mr-3 border-2 border-primary object-cover"/>
+                <span className="mr-3 font-medium">By Paola Michelle</span>
+                <span className="text-gray-300">|</span>
+                <time className="ml-3 font-medium" dateTime="2024-04-15">April 15, 2024</time>
             </div>
             <div className="prose prose-lg text-gray-500 mb-8">
                 <p>In the journey of life, the habits we form in childhood often become the cornerstones of our adult
@@ -49,23 +54,57 @@ const HealthyHabitsBlogPost = () => {
                 <p>As parents, guardians, and role models, we have the opportunity—and responsibility—to instill healthy
                     habits in the younger generation. Here are some key areas to focus on:</p>
 
-                <ul className="list-disc pl-6 mb-6">
-                    <li><strong>Nutritious Eating:</strong> Introduce a variety of fruits, vegetables, and whole grains
-                        early on. Make healthy eating a fun and normal part of daily life.
-                    </li>
-                    <li><strong>Active Lifestyle:</strong> Encourage regular physical activity through play, sports, or
-                        family outings. Limit screen time and promote outdoor activities.
-                    </li>
-                    <li><strong>Emotional Well-being:</strong> Teach stress-management techniques and foster open
-                        communication about feelings and mental health.
-                    </li>
-                    <li><strong>Sleep Hygiene:</strong> Establish consistent sleep routines to ensure adequate rest,
-                        crucial for both physical and mental development.
-                    </li>
-                    <li><strong>Positive Role Modeling:</strong> Children often mimic the behaviors they see. Be mindful
-                        of your own habits and strive to set a good example.
-                    </li>
-                </ul>
+                <div className="space-y-4 mb-8 mt-6">
+                    <div className="flex items-start bg-green-50 p-4 rounded-xl shadow-sm">
+                        <div className="bg-green-200 w-10 h-10 rounded-full flex items-center justify-center text-xl flex-shrink-0 mr-4 shadow-sm">
+                            🥦
+                        </div>
+                        <div>
+                            <strong className="text-green-900 text-lg block mb-1">Nutritious Eating:</strong> 
+                            <span className="text-gray-700">Introduce a variety of fruits, vegetables, and whole grains early on. Make healthy eating a fun and normal part of daily life.</span>
+                        </div>
+                    </div>
+
+                    <div className="flex items-start bg-orange-50 p-4 rounded-xl shadow-sm">
+                        <div className="bg-orange-200 w-10 h-10 rounded-full flex items-center justify-center text-xl flex-shrink-0 mr-4 shadow-sm">
+                            🥕
+                        </div>
+                        <div>
+                            <strong className="text-orange-900 text-lg block mb-1">Active Lifestyle:</strong> 
+                            <span className="text-gray-700">Encourage regular physical activity through play, sports, or family outings. Limit screen time and promote outdoor activities.</span>
+                        </div>
+                    </div>
+
+                    <div className="flex items-start bg-yellow-50 p-4 rounded-xl shadow-sm">
+                        <div className="bg-yellow-200 w-10 h-10 rounded-full flex items-center justify-center text-xl flex-shrink-0 mr-4 shadow-sm">
+                            🍋
+                        </div>
+                        <div>
+                            <strong className="text-yellow-900 text-lg block mb-1">Emotional Well-being:</strong> 
+                            <span className="text-gray-700">Teach stress-management techniques and foster open communication about feelings and mental health.</span>
+                        </div>
+                    </div>
+
+                    <div className="flex items-start bg-indigo-50 p-4 rounded-xl shadow-sm">
+                        <div className="bg-indigo-200 w-10 h-10 rounded-full flex items-center justify-center text-xl flex-shrink-0 mr-4 shadow-sm">
+                            🍇
+                        </div>
+                        <div>
+                            <strong className="text-indigo-900 text-lg block mb-1">Sleep Hygiene:</strong> 
+                            <span className="text-gray-700">Establish consistent sleep routines to ensure adequate rest, crucial for both physical and mental development.</span>
+                        </div>
+                    </div>
+
+                    <div className="flex items-start bg-pink-50 p-4 rounded-xl shadow-sm">
+                        <div className="bg-pink-200 w-10 h-10 rounded-full flex items-center justify-center text-xl flex-shrink-0 mr-4 shadow-sm">
+                            🍓
+                        </div>
+                        <div>
+                            <strong className="text-pink-900 text-lg block mb-1">Positive Role Modeling:</strong> 
+                            <span className="text-gray-700">Children often mimic the behaviors they see. Be mindful of your own habits and strive to set a good example.</span>
+                        </div>
+                    </div>
+                </div>
 
                 <h2 className="text-2xl font-semibold text-gray-800 mt-6 mb-4">Small Changes, Big Impact</h2>
 

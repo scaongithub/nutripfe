@@ -76,6 +76,11 @@ const ImprovedBookingPage = () => {
         handleSubmit();
     };
 
+    const handleStripePayment = () => {
+        alert('Stripe Payment Integration Placeholder: In a real application, this would redirect to Stripe Checkout.');
+        handleSubmit();
+    };
+
     const formatDate = (date) => {
         return new Intl.DateTimeFormat('en-US', {
             weekday: 'short',
@@ -221,124 +226,135 @@ const ImprovedBookingPage = () => {
 
             {/* Step 1: Date and Time Selection */}
             {currentStep === 1 && (
-                <div className="bg-white rounded-lg shadow-md p-6">
-                    <div className="mb-6">
-                        <h2 className="text-xl font-semibold mb-4">Select a Date & Time</h2>
+                <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
+                    <div className="flex flex-col lg:flex-row lg:gap-8">
+                        {/* Left Side: Calendar */}
+                        <div className="lg:w-1/2 mb-6 lg:mb-0">
+                            <h2 className="text-xl font-semibold mb-4">Select a Date</h2>
 
-                        {/* Calendar Navigation */}
-                        <div className="flex items-center justify-between mb-4">
-                            <button
-                                onClick={prevMonth}
-                                className="p-2 rounded-full hover:bg-gray-100"
-                            >
-                                <ChevronLeft className="w-5 h-5" />
-                            </button>
-                            <h3 className="text-lg font-medium">{getMonthName()}</h3>
-                            <button
-                                onClick={nextMonth}
-                                className="p-2 rounded-full hover:bg-gray-100"
-                            >
-                                <ChevronRight className="w-5 h-5" />
-                            </button>
-                        </div>
-
-                        {/* Calendar View */}
-                        <div className="mb-8">
-                            <div className="grid grid-cols-7 gap-1 mb-2">
-                                {['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'].map(day => (
-                                    <div key={day} className="text-center text-sm text-gray-500">{day}</div>
-                                ))}
+                            {/* Calendar Navigation */}
+                            <div className="flex items-center justify-between mb-2">
+                                <button
+                                    onClick={prevMonth}
+                                    className="p-1.5 rounded-full hover:bg-gray-100"
+                                >
+                                    <ChevronLeft className="w-4 h-4" />
+                                </button>
+                                <h3 className="text-base font-medium">{getMonthName()}</h3>
+                                <button
+                                    onClick={nextMonth}
+                                    className="p-1.5 rounded-full hover:bg-gray-100"
+                                >
+                                    <ChevronRight className="w-4 h-4" />
+                                </button>
                             </div>
 
-                            <div className="grid grid-cols-7 gap-1">
-                                {/* Fill in empty spaces for the start of the month */}
-                                {Array.from({ length: new Date(currentYear, currentMonth, 1).getDay() || 7 }).map((_, index) => (
-                                    <div key={`empty-start-${index}`} className="h-12"></div>
-                                ))}
+                            {/* Calendar View */}
+                            <div className="mb-4">
+                                <div className="grid grid-cols-7 gap-1 mb-1">
+                                    {['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'].map(day => (
+                                        <div key={day} className="text-center text-xs text-gray-400 font-medium uppercase tracking-wider">{day}</div>
+                                    ))}
+                                </div>
 
-                                {/* Calendar days */}
-                                {Array.from({ length: new Date(currentYear, currentMonth + 1, 0).getDate() }).map((_, index) => {
-                                    const day = index + 1;
-                                    const date = new Date(currentYear, currentMonth, day);
-                                    const isAvailable = currentMonthDates.some(
-                                        availableDate => availableDate.getDate() === day
-                                    );
+                                <div className="grid grid-cols-7 gap-1">
+                                    {/* Fill in empty spaces for the start of the month */}
+                                    {Array.from({ length: new Date(currentYear, currentMonth, 1).getDay() || 7 }).map((_, index) => (
+                                        <div key={`empty-start-${index}`} className="h-10 text-xs"></div>
+                                    ))}
 
-                                    return (
-                                        <button
-                                            key={`day-${day}`}
-                                            disabled={!isAvailable}
-                                            onClick={() => isAvailable && handleDateSelect(date)}
-                                            className={`h-12 flex items-center justify-center rounded-md ${
-                                                isDateSelected(date)
-                                                    ? 'bg-primary text-white'
-                                                    : isAvailable
-                                                        ? 'hover:bg-primary hover:bg-opacity-10 cursor-pointer'
-                                                        : 'text-gray-300 cursor-not-allowed'
-                                            }`}
-                                        >
-                                            {day}
-                                        </button>
-                                    );
-                                })}
+                                    {/* Calendar days */}
+                                    {Array.from({ length: new Date(currentYear, currentMonth + 1, 0).getDate() }).map((_, index) => {
+                                        const day = index + 1;
+                                        const date = new Date(currentYear, currentMonth, day);
+                                        const isAvailable = currentMonthDates.some(
+                                            availableDate => availableDate.getDate() === day
+                                        );
+
+                                        return (
+                                            <button
+                                                key={`day-${day}`}
+                                                disabled={!isAvailable}
+                                                onClick={() => isAvailable && handleDateSelect(date)}
+                                                className={`h-10 text-sm flex items-center justify-center rounded-md transition-all ${
+                                                    isDateSelected(date)
+                                                        ? 'bg-primary text-white shadow-sm scale-110 z-10'
+                                                        : isAvailable
+                                                            ? 'hover:bg-primary hover:bg-opacity-10 text-gray-700 cursor-pointer'
+                                                            : 'text-gray-300 cursor-not-allowed'
+                                                }`}
+                                            >
+                                                {day}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         </div>
 
-                        {/* Time Slots */}
-                        {bookingData.date && (
-                            <div>
-                                <h3 className="text-md font-medium mb-3">Available Times for {formatDate(bookingData.date)}</h3>
+                        {/* Right Side: Time Slots */}
+                        <div className="lg:w-1/2 border-t lg:border-t-0 lg:border-l border-gray-100 pt-6 lg:pt-0 lg:pl-8">
+                            {bookingData.date ? (
+                                <div className="animate-in fade-in slide-in-from-right-4 duration-300">
+                                    <h2 className="text-xl font-semibold mb-4 text-gray-900">Available Times</h2>
+                                    <p className="text-sm text-gray-500 mb-6">{formatDate(bookingData.date)}</p>
 
-                                <div className="space-y-4">
-                                    <div>
-                                        <h4 className="text-sm text-gray-500 mb-2">Morning</h4>
-                                        <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-                                            {availableTimes.morning.map(time => (
-                                                <button
-                                                    key={time}
-                                                    onClick={() => handleTimeSelect(time)}
-                                                    className={`py-2 px-3 rounded-md text-center ${
-                                                        bookingData.time === time
-                                                            ? 'bg-primary text-white'
-                                                            : 'bg-gray-100 hover:bg-gray-200'
-                                                    }`}
-                                                >
-                                                    {time}
-                                                </button>
-                                            ))}
+                                    <div className="space-y-6">
+                                        <div>
+                                            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Morning</h4>
+                                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                                {availableTimes.morning.map(time => (
+                                                    <button
+                                                        key={time}
+                                                        onClick={() => handleTimeSelect(time)}
+                                                        className={`py-2.5 px-3 rounded-lg text-sm font-medium text-center transition-all ${
+                                                            bookingData.time === time
+                                                                ? 'bg-primary text-white shadow-md ring-2 ring-primary ring-offset-2'
+                                                                : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-100 shadow-sm'
+                                                        }`}
+                                                    >
+                                                        {time}
+                                                    </button>
+                                                ))}
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div>
-                                        <h4 className="text-sm text-gray-500 mb-2">Afternoon</h4>
-                                        <div className="grid grid-cols-3 sm:grid-cols-4 gap-2">
-                                            {availableTimes.afternoon.map(time => (
-                                                <button
-                                                    key={time}
-                                                    onClick={() => handleTimeSelect(time)}
-                                                    className={`py-2 px-3 rounded-md text-center ${
-                                                        bookingData.time === time
-                                                            ? 'bg-primary text-white'
-                                                            : 'bg-gray-100 hover:bg-gray-200'
-                                                    }`}
-                                                >
-                                                    {time}
-                                                </button>
-                                            ))}
+                                        <div>
+                                            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Afternoon</h4>
+                                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                                {availableTimes.afternoon.map(time => (
+                                                    <button
+                                                        key={time}
+                                                        onClick={() => handleTimeSelect(time)}
+                                                        className={`py-2.5 px-3 rounded-lg text-sm font-medium text-center transition-all ${
+                                                            bookingData.time === time
+                                                                ? 'bg-primary text-white shadow-md ring-2 ring-primary ring-offset-2'
+                                                                : 'bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-100 shadow-sm'
+                                                        }`}
+                                                    >
+                                                        {time}
+                                                    </button>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        )}
+                            ) : (
+                                <div className="h-full flex flex-col items-center justify-center p-8 text-center bg-gray-50 rounded-lg border border-dashed border-gray-200">
+                                    <Calendar className="w-12 h-12 text-gray-300 mb-4" />
+                                    <p className="text-gray-500 font-medium">Please select a date first</p>
+                                </div>
+                            )}
+                        </div>
                     </div>
 
-                    <div className="flex justify-end">
+                    <div className="flex justify-end mt-8 pt-4 border-t border-gray-100">
                         <button
                             onClick={nextStep}
                             disabled={!bookingData.date || !bookingData.time}
-                            className="flex items-center justify-center bg-primary hover:bg-primary-dark disabled:bg-gray-300 disabled:cursor-not-allowed text-white py-3 px-6 rounded-md transition-colors"
+                            className="flex items-center justify-center bg-primary hover:bg-primary-dark disabled:bg-gray-300 disabled:cursor-not-allowed text-white py-3 px-8 rounded-full font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
                         >
-                            Continue <ArrowRight className="ml-2 w-4 h-4" />
+                            Continue <ArrowRight className="ml-2 w-5 h-5" />
                         </button>
                     </div>
                 </div>
@@ -601,19 +617,33 @@ const ImprovedBookingPage = () => {
                                 </div>
                             </div>
 
-                            <div className="bg-blue-50 p-4 rounded-md mb-6">
-                                <p className="text-sm text-blue-600">
-                                    You will be redirected to PayPal to complete your payment securely.
+                            <div className="bg-blue-50 p-4 rounded-md mb-6 text-center">
+                                <p className="text-sm text-blue-600 font-medium">
+                                    Secure checkout via Stripe or PayPal
                                 </p>
                             </div>
 
-                            <button
-                                onClick={handlePayment}
-                                disabled={!bookingData.name || !bookingData.email || !bookingData.phone}
-                                className="w-full flex items-center justify-center bg-primary hover:bg-primary-dark disabled:bg-gray-300 disabled:cursor-not-allowed text-white py-3 px-6 rounded-md transition-colors"
-                            >
-                                Pay Now (€{bookingData.duration === 30 ? '50' : '100'})
-                            </button>
+                            <div className="space-y-3">
+                                <button
+                                    onClick={handleStripePayment}
+                                    disabled={!bookingData.name || !bookingData.email || !bookingData.phone}
+                                    className="w-full flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white py-3 px-6 rounded-md transition-colors shadow-sm font-semibold"
+                                >
+                                    <CreditCard className="w-5 h-5 mr-2" />
+                                    Pay with Stripe (€{bookingData.duration === 30 ? '50' : '100'})
+                                </button>
+                                
+                                <button
+                                    onClick={handlePayment}
+                                    disabled={!bookingData.name || !bookingData.email || !bookingData.phone}
+                                    className="w-full flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 disabled:bg-gray-300 disabled:cursor-not-allowed text-gray-900 py-3 px-6 rounded-md transition-colors shadow-sm font-semibold"
+                                >
+                                    <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.32a.641.641 0 0 1 .63-.532h10.958c2.148 0 3.737.452 4.726 1.341.921.82 1.393 2.052 1.393 3.633 0 1.564-.407 3.011-1.21 4.301-.767 1.229-1.928 2.222-3.449 2.952-.793.38-1.742.618-2.82.709-.345.029-.533.197-.611.536l-.01.042c-.2.9-.844 3.744-1.127 4.966-.015.065-.035.13-.058.193-.076.21-.213.344-.45.344h.023l-.01.032zm13.193-11.833c0-.022-.001-.044-.001-.066v.066zm-4.305-6.19H5.973l-2.73 17.653h3.535l1.09-7.052c.164-1.059.882-1.742 1.944-1.83 1.157-.097 2.193-.34 3.08-1.018 1.484-1.135 2.152-2.793 2.152-5.463 0-.82-.236-1.465-.705-1.923-.393-.385-1.025-.367-1.378-.367z" />
+                                    </svg>
+                                    Pay with PayPal (€{bookingData.duration === 30 ? '50' : '100'})
+                                </button>
+                            </div>
                         </div>
                     </div>
 

@@ -62,7 +62,7 @@ const Services = () => {
         </div>
         <div className="mt-12 text-center">
           <a
-            href="#"
+            href="/booking"
             className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition duration-300"
           >
             {t('services.ctaButton')}

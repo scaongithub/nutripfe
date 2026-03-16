@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Calendar, Clock, Timer, CreditCard, ArrowRight, Check, ChevronLeft, ChevronRight, Video, X } from 'lucide-react';
-import { useBooking } from './BookingContext';
-import BookingService from './BookingService';
+import React, { useState } from 'react';
+import { Calendar, Clock, Timer, CreditCard, ArrowRight, Check, ChevronLeft, ChevronRight, Video } from 'lucide-react';
 
 const ImprovedBookingPage = () => {
 
 
 
-    const { t } = useTranslation();
     const [currentStep, setCurrentStep] = useState(1);
     const [bookingData, setBookingData] = useState({
         date: null,

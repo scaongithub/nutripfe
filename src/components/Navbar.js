@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {Link, useNavigate} from 'react-router-dom';
-import { Menu, X, AlertTriangle, Construction } from 'lucide-react';
+import { Menu, X, Construction } from 'lucide-react';
 import { GB, IT, ES } from 'country-flag-icons/react/3x2';
 
 const Navbar = () => {

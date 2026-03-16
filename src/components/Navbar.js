@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {Link, useNavigate} from 'react-router-dom';
 import { Menu, X, Construction } from 'lucide-react';
-import { GB, IT, ES } from 'country-flag-icons/react/3x2';
+import { GB, IT, ES, MX } from 'country-flag-icons/react/3x2';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 
 const Navbar = () => {
@@ -14,6 +14,9 @@ const Navbar = () => {
     i18n.changeLanguage(lng);
   };
 
+  // Determine user region based on timezone for Spanish flag
+  const isAmericas = Intl.DateTimeFormat().resolvedOptions().timeZone.startsWith('America');
+
   const navItems = [
     { name: t('navbar.home'), path: '/' },
     { name: t('navbar.services'), path: '/services' },
@@ -24,7 +27,7 @@ const Navbar = () => {
 
   const languages = [
     { code: 'en', name: 'English', flag: GB },
-    { code: 'es', name: 'Español', flag: ES },
+    { code: 'es', name: 'Español', flag: isAmericas ? MX : ES },
     { code: 'it', name: 'Italiano', flag: IT },
   ];
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Flag } from 'lucide-react';
 
 const Testimonials = () => {
   const { t, i18n } = useTranslation();

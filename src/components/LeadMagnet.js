@@ -97,7 +97,7 @@ const LeadMagnet = () => {
 
               <div className="rounded-md shadow">
                 <a
-                    href="#"
+                    href="/booking"
                     className="flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark md:py-4 md:text-lg md:px-10"
                 >
                   <Download className="w-5 h-5 mr-2" />

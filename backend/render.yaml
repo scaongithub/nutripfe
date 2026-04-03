@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: todoenbalance-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt && alembic upgrade head
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: STRIPE_PRICE_CONSULTATION_30
+        sync: false
+      - key: STRIPE_PRICE_CONSULTATION_60
+        sync: false
+      - key: STRIPE_PRICE_DIET_MEDITERRANEAN
+        sync: false
+      - key: STRIPE_PRICE_DIET_LOWCARB
+        sync: false
+      - key: STRIPE_PRICE_DIET_PLANTBASED
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: FROM_EMAIL
+        value: bookings@todoenbalance.com
+      - key: PAOLA_EMAIL
+        value: paola@todoenbalance.com
+      - key: FRONTEND_URL
+        value: https://todoenbalance.vercel.app
+      - key: ENVIRONMENT
+        value: production
+      - key: SECRET_KEY
+        sync: false
+      - key: ADMIN_EMAIL
+        value: paola@todoenbalance.com
+      - key: ADMIN_PASSWORD
+        sync: false

@@ -64,10 +64,10 @@ const FAQ = () => {
   ];
 
   return (
-      <div className="bg-white py-12 sm:py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="bg-gray-50/50 py-16 sm:py-24 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-5xl tracking-tight">
               {t('faq.title', 'Frequently Asked Questions')}
             </h2>
             <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
@@ -75,65 +75,68 @@ const FAQ = () => {
             </p>
           </div>
 
-          <div className="mt-16 max-w-3xl mx-auto">
+          <div className="mt-16 max-w-3xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
                 <div
                     key={index}
-                    className="mb-6 bg-gray-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
-                    // Add schema markup for SEO
+                    className={`bg-white rounded-3xl overflow-hidden shadow-sm transition-all duration-300 border ${openIndex === index ? 'border-primary/20 shadow-md ring-4 ring-primary/5' : 'border-gray-100 hover:border-gray-200'}`}
                     itemScope
                     itemType={`https://schema.org/${faq.schema}`}
                 >
                   <button
-                      className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                      className="w-full flex items-center justify-between p-6 sm:px-8 sm:py-6 text-left focus:outline-none"
                       onClick={() => toggleFAQ(index)}
                       aria-expanded={openIndex === index}
                   >
                     <div className="flex items-center">
                       <div className="flex-shrink-0 mr-4">
-                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                          <faq.icon className="w-5 h-5 text-primary" />
+                        <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${openIndex === index ? 'bg-primary text-white shadow-md' : 'bg-primary/10 text-primary'}`}>
+                          <faq.icon className="w-6 h-6" />
                         </div>
                       </div>
                       <h3
-                          className="text-lg font-semibold text-gray-900"
+                          className="text-lg font-bold text-gray-900"
                           itemProp="name"
                       >
                         {faq.question}
                       </h3>
                     </div>
-                    <div className="ml-4">
-                      {openIndex === index ? (
-                          <ChevronUp className="w-5 h-5 text-primary" />
-                      ) : (
-                          <ChevronDown className="w-5 h-5 text-gray-400" />
-                      )}
+                    <div className="ml-4 flex-shrink-0">
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${openIndex === index ? 'bg-gray-100' : 'bg-gray-50 hover:bg-gray-100'}`}>
+                        {openIndex === index ? (
+                            <ChevronUp className="w-5 h-5 text-gray-600" />
+                        ) : (
+                            <ChevronDown className="w-5 h-5 text-gray-400" />
+                        )}
+                      </div>
                     </div>
                   </button>
 
                   <div
-                      className={`px-6 pb-6 ${openIndex === index ? 'block' : 'hidden'}`}
+                      className={`px-6 sm:px-8 pb-8 ${openIndex === index ? 'block' : 'hidden'}`}
                       itemProp="text"
                   >
-                    <div className="prose max-w-none text-gray-600">
-                      <p>{faq.answer}</p>
+                    <div className="prose max-w-none text-gray-600 ml-16 bg-gray-50 p-6 rounded-2xl">
+                      <p className="font-medium text-[15px] leading-relaxed m-0">{faq.answer}</p>
                     </div>
                   </div>
                 </div>
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-gray-600">
-              {t('faq.moreQuestions', "Didn't find what you're looking for?")}
-            </p>
-            <a
-                href="/contact"
-                className="mt-2 inline-flex items-center text-primary font-medium hover:text-primary-dark"
-            >
-              {t('faq.contactUs', 'Contact us for more information')}
-              <span className="ml-2">→</span>
-            </a>
+          <div className="mt-16 text-center">
+            <div className="inline-block bg-white px-8 py-6 rounded-full shadow-md border border-gray-100">
+              <p className="text-gray-600 font-medium inline-block mr-4">
+                {t('faq.moreQuestions', "Didn't find what you're looking for?")}
+              </p>
+              <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center text-primary font-bold hover:text-blue-600 transition-colors"
+              >
+                {t('faq.contactUs', 'Contact us for more information')}
+                <span className="ml-2 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">→</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

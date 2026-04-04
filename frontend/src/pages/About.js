@@ -72,26 +72,26 @@ const About = () => {
               </p>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-10">
               <a
                   href="/booking"
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                  className="inline-flex items-center px-8 py-4 shadow-sm text-lg font-bold rounded-full text-white bg-primary hover:bg-primary-dark hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
               >
                 {t('about.cta')}
               </a>
             </div>
           </div>
 
-          <div className="mt-12 lg:mt-0 space-y-8">
+          <div className="mt-16 lg:mt-0 space-y-6">
             {credentials.map((credential, index) => (
-                <div key={index} className="flex items-center space-x-4 bg-gray-50 p-6 rounded-lg">
-                  <div className="flex-shrink-0">
-                    <credential.icon className="h-8 w-8 text-primary" />
+                <div key={index} className="flex items-center space-x-6 bg-gray-50/80 hover:bg-white border border-gray-100 shadow-sm p-6 sm:p-8 rounded-[2rem] hover:shadow-md transition-all duration-300">
+                  <div className="flex-shrink-0 w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center">
+                    <credential.icon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900">{credential.title}</h3>
-                    <p className="mt-1 text-sm text-gray-500">{credential.institution}</p>
-                    <p className="text-sm text-gray-500">{credential.location}</p>
+                    <h3 className="text-lg font-bold text-gray-900">{credential.title}</h3>
+                    <p className="mt-1 text-sm font-medium text-gray-600">{credential.institution}</p>
+                    <p className="text-sm text-gray-500 uppercase tracking-widest mt-1 text-xs">{credential.location}</p>
                   </div>
                 </div>
             ))}
@@ -110,42 +110,42 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           {/* WhatsApp Contact */}
-          <div className="bg-green-50 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 text-center flex flex-col items-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-              <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="bg-green-50 lg:bg-white lg:border lg:border-green-100 rounded-[2.5rem] p-10 lg:shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col items-center">
+            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-8 shadow-inner">
+              <svg className="w-10 h-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">WhatsApp</h3>
-            <p className="text-gray-600 mb-6 flex-grow">
+            <h3 className="text-2xl font-black text-gray-900 mb-3">WhatsApp</h3>
+            <p className="text-gray-600 font-medium mb-8 flex-grow">
               {t('contact.whatsappDesc', 'Quick responses on weekdays from 9am-6pm CET')}
             </p>
             <a
                 href="https://wa.me/+34123456789"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 w-full justify-center"
+                className="inline-flex items-center px-8 py-4 text-base font-bold rounded-full text-white bg-green-600 hover:bg-green-700 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 w-full justify-center"
             >
               {t('contact.chatNow', 'Chat Now')}
             </a>
           </div>
 
           {/* Email Contact */}
-          <div className="bg-blue-50 rounded-xl p-8 shadow-sm hover:shadow-md transition-all duration-300 text-center flex flex-col items-center">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-              <svg className="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="bg-blue-50 lg:bg-white lg:border lg:border-blue-100 rounded-[2.5rem] p-10 lg:shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center flex flex-col items-center">
+            <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mb-8 shadow-inner">
+              <svg className="w-10 h-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-2">Email</h3>
-            <p className="text-gray-600 mb-6 flex-grow">
+            <h3 className="text-2xl font-black text-gray-900 mb-3">Email</h3>
+            <p className="text-gray-600 font-medium mb-8 flex-grow">
               {t('contact.emailDesc', 'Send detailed inquiries for personalized responses')}
             </p>
             <a
                 href="mailto:paola@todoenbalance.com"
-                className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-full justify-center"
+                className="inline-flex items-center px-8 py-4 text-base font-bold rounded-full text-white bg-blue-600 hover:bg-blue-700 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 w-full justify-center"
             >
               paola@todoenbalance.com
             </a>

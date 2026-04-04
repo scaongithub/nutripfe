@@ -1,9 +1,20 @@
-// BookingService.js
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+
 class BookingService {
+    static async getAvailableSlots() {
+        try {
+            const response = await fetch(`${API_URL}/api/bookings/available-slots`);
+            if (!response.ok) throw new Error('Failed to fetch available slots');
+            return await response.json();
+        } catch (error) {
+            console.error('Error fetching available slots:', error);
+            return [];
+        }
+    }
+
     static async createBooking(bookingData) {
         try {
-            // Here you would make an API call to your backend
-            const response = await fetch('/api/bookings', {
+            const response = await fetch(`${API_URL}/api/bookings`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -12,33 +23,14 @@ class BookingService {
             });
 
             if (!response.ok) {
-                throw new Error('Failed to create booking');
+                const err = await response.json();
+                throw new Error(err.detail || 'Failed to create booking');
             }
 
             return await response.json();
         } catch (error) {
-            throw new Error('Booking creation failed');
-        }
-    }
-
-    static async initiatePayment(amount, currency = 'EUR') {
-        try {
-            // Here you would integrate with your payment provider
-            // Example using Stripe:
-            const response = await fetch('/api/create-payment-intent', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    amount,
-                    currency,
-                }),
-            });
-
-            return await response.json();
-        } catch (error) {
-            throw new Error('Payment initiation failed');
+            console.error('Booking creation failed:', error);
+            throw error;
         }
     }
 }

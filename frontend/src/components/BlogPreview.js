@@ -11,19 +11,19 @@ const BlogPreview = () => {
   return (
       <div className="space-y-6">
         {posts.map((post) => (
-            <div key={post.id} className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow">
+            <div key={post.id} className="bg-white p-6 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-50">
               <div className="flex items-start gap-4">
-                <div className={`${post.bgColor} w-10 h-10 rounded-full flex items-center justify-center text-xl flex-shrink-0`}>
+                <div className={`${post.bgColor} w-14 h-14 rounded-full flex items-center justify-center text-2xl flex-shrink-0 shadow-inner`}>
                   {post.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
                     <Link to={`/blog/${post.id}`} className="hover:text-primary transition-colors">
                       {post.title}
                     </Link>
                   </h3>
-                  <p className="text-gray-600 text-sm mb-2">{post.excerpt}</p>
-                  <time className="text-gray-400 text-xs">{post.date}</time>
+                  <p className="text-gray-500 text-sm mb-3 font-medium">{post.excerpt}</p>
+                  <time className="text-primary text-xs font-bold uppercase tracking-wider">{post.date}</time>
                 </div>
               </div>
             </div>

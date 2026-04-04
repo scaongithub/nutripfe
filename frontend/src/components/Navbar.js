@@ -1,28 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import {Link, useNavigate} from 'react-router-dom';
-import { Menu, X, Construction } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Home, Sparkles, User, FileText, Leaf, Menu, X, Construction, Calendar } from 'lucide-react';
 import { GB, IT, ES, MX } from 'country-flag-icons/react/3x2';
-import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
 
-  // Determine user region based on timezone for Spanish flag
   const isAmericas = Intl.DateTimeFormat().resolvedOptions().timeZone.startsWith('America');
 
   const navItems = [
-    { name: t('navbar.home'), path: '/' },
-    { name: t('navbar.services'), path: '/services' },
-    { name: t('navbar.about'), path: '/about' },
-    { name: t('navbar.blog'), path: '/blog' },
-    { name: t('navbar.diets', 'Diets'), path: '/diets' },
+    { name: t('navbar.home', 'Home'), path: '/', icon: Home },
+    { name: t('navbar.services', 'Services'), path: '/services', icon: Sparkles },
+    { name: t('navbar.about', 'About'), path: '/about', icon: User },
+    { name: t('navbar.blog', 'Blog'), path: '/blog', icon: FileText },
+    { name: t('navbar.diets', 'Diets'), path: '/diets', icon: Leaf },
   ];
 
   const languages = [
@@ -31,146 +37,134 @@ const Navbar = () => {
     { code: 'it', name: 'Italiano', flag: IT },
   ];
 
-  // Function to get the current language object
-  const getCurrentLanguage = () => {
-    const currentLangCode = i18n.language ? i18n.language.split('-')[0] : 'en'; // Default to 'en' if i18n.language is undefined
-    return languages.find(lang => lang.code === currentLangCode) || languages[0]; // Default to first language if not found
-  };
-
-  const currentLang = getCurrentLanguage();
-
-  const handleBookNowClick = () => {
-    navigate('/booking');
-  };
+  const currentLang = languages.find(lang => lang.code === (i18n.language ? i18n.language.split('-')[0] : 'en')) || languages[0];
 
   return (
-      <nav className="bg-white shadow-md">
-        {/* Work in Progress Banner */}
-        <div className="bg-yellow-100 text-yellow-800 px-4 py-2">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="flex items-center">
-              <Construction className="w-4 h-4 mr-2" />
-              <p className="text-sm font-medium">
-                {t('navbar.workInProgress', 'Website Under Construction – Some features may be incomplete')}
-              </p>
-            </div>
-            <a
-                href="https://github.com/yourusername/todoenbalance"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs underline hover:no-underline"
-            >
-              {t('navbar.viewGithub', 'View on GitHub')}
-            </a>
-          </div>
+    <>
+      {/* Top Warning Banner - kept un-floating so it stays at the top of the document */}
+      <div className="bg-amber-100 text-amber-800 px-4 py-2 text-xs sm:text-sm font-medium text-center relative z-50">
+        <div className="flex justify-center items-center gap-2 max-w-7xl mx-auto">
+          <Construction className="w-4 h-4" />
+          {t('navbar.workInProgress', 'Website Under Construction – Some features may be incomplete')}
         </div>
+      </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex">
-              <Link to="/" className="flex-shrink-0 flex items-center">
-                <img src="/logo.png" alt="TODOenBALANCE Logo" className="h-8 w-auto"/>
-                <span className="ml-2 text-xl font-bold text-primary">TODOenBALANCE</span>
-                <span className="subtitle-paola relative -bottom-3 left-1">by Paola Michelle</span>
-              </Link>
+      {/* Spacer to prevent layout jumps because the navbar is fixed */}
+      <div className="h-24 md:h-32"></div>
+
+      {/* Floating Pill Navigation */}
+      <div className="fixed top-12 left-0 right-0 z-50 flex justify-center px-4 pointer-events-none transition-all duration-300 transform mt-2">
+        <nav className={`pointer-events-auto flex items-center gap-2 p-2 rounded-full transition-all duration-500 ease-out shadow-xl border border-white/50 ${scrolled ? 'bg-white/90 backdrop-blur-xl scale-95 shadow-2xl' : 'bg-white shadow-lg'}`}>
+          
+          {/* Logo Section */}
+          <Link to="/" className="flex items-center gap-3 pl-4 pr-3 py-2 rounded-full hover:bg-gray-50 transition-colors">
+            <img src="/logo.png" alt="TODOenBALANCE Logo" className="h-7 sm:h-9 w-auto"/>
+            <div className="flex flex-col justify-center hidden lg:flex">
+               <span className="text-sm font-extrabold text-primary leading-none tracking-tight">TODOenBALANCE</span>
             </div>
-            <div className="hidden sm:ml-6 sm:flex sm:items-center">
-              <NavigationMenu.Root className="relative z-10 flex w-full justify-center">
-                <NavigationMenu.List className="flex items-center space-x-2">
-                  {navItems.map((item) => (
-                    <NavigationMenu.Item key={item.name}>
-                      <NavigationMenu.Link asChild>
-                        <Link
-                          to={item.path}
-                          className="bg-gray-50 text-gray-700 hover:bg-gray-100 hover:text-primary border border-gray-200 block select-none rounded-md px-4 py-2 text-sm font-medium leading-none no-underline outline-none transition-colors transition-all duration-200 shadow-sm"
-                        >
-                          {item.name}
-                        </Link>
-                      </NavigationMenu.Link>
-                    </NavigationMenu.Item>
-                  ))}
-                </NavigationMenu.List>
-              </NavigationMenu.Root>
-            </div>
-            <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-4">
-              <button onClick={handleBookNowClick}
-                      className="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded-md transition duration-300 shadow-sm">
-                {t('navbar.bookNow')}
-              </button>
-              <div className="relative flex items-center bg-gray-50 border border-gray-200 rounded-md p-1 focus-within:ring-2 focus-within:ring-primary focus-within:border-transparent">
-                <div className="flex items-center pl-2 pr-1 pointer-events-none">
-                  {React.createElement(currentLang.flag, {
-                    title: currentLang.name,
-                    className: "h-4 w-6 rounded-sm shadow-sm"
-                  })}
-                </div>
-                <select
-                    onChange={(e) => changeLanguage(e.target.value)}
-                    value={currentLang.code}
-                    className="appearance-none bg-transparent border-none py-1.5 pl-1 pr-6 text-sm font-medium text-gray-700 focus:outline-none focus:ring-0 cursor-pointer"
+          </Link>
+
+          {/* Vertical Divider */}
+          <div className="hidden md:block w-px h-8 bg-gray-200 mx-1"></div>
+
+          {/* Desktop Links (Icons + Text) */}
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path || (item.path !== '/' && location.pathname.startsWith(item.path));
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`group relative flex items-center gap-2 px-4 py-3 rounded-full transition-all duration-300 ${
+                    isActive 
+                      ? 'bg-gray-900 text-white shadow-md transform -translate-y-1 scale-105 ring-4 ring-gray-900/10' 
+                      : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100'
+                  }`}
                 >
-                  {languages.map((lang) => (
-                      <option key={lang.code} value={lang.code}>
-                        {lang.code.toUpperCase()}
-                      </option>
-                  ))}
-                </select>
-                <div className="pointer-events-none absolute right-2 flex items-center">
-                  <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <item.icon className={`w-4 h-4 transition-transform duration-300 ${isActive ? 'scale-110' : 'group-hover:scale-110'}`} />
+                  <span className={`text-sm font-semibold tracking-wide ${isActive ? 'text-white' : ''}`}>
+                    {item.name}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Right Section (Lang + Book) */}
+          <div className="flex items-center gap-2 pl-2">
+            
+            {/* Lang Dropdown */}
+            <div className="relative group rounded-full hover:bg-gray-50 p-1.5 transition-colors flex items-center border border-gray-100 cursor-pointer text-gray-700 hover:text-gray-900">
+              {React.createElement(currentLang.flag, { className: "h-5 w-7 rounded-[4px] shadow-sm ml-1" })}
+              <select
+                onChange={(e) => changeLanguage(e.target.value)}
+                value={currentLang.code}
+                className="appearance-none bg-transparent border-none py-1 pl-2 pr-6 text-sm font-bold focus:ring-0 cursor-pointer uppercase"
+              >
+                {languages.map((lang) => (
+                  <option key={lang.code} value={lang.code}>{lang.code}</option>
+                ))}
+              </select>
+              <div className="pointer-events-none absolute right-2 flex items-center">
+                  <svg className="h-4 w-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
-                </div>
               </div>
             </div>
-            <div className="-mr-2 flex items-center sm:hidden">
-              <button
-                  onClick={() => setIsOpen(!isOpen)}
-                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
-              >
-                <span className="sr-only">Open main menu</span>
-                {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
-              </button>
-            </div>
+
+            {/* Book Now Button (Desktop) */}
+            <button 
+              onClick={() => navigate('/booking')}
+              className="hidden sm:flex items-center gap-2 bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-full font-bold text-sm transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 ml-1"
+            >
+              <Calendar className="w-4 h-4" />
+              {t('navbar.bookNow', 'Book Now')}
+            </button>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden p-3 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 focus:outline-none transition-colors"
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isOpen && (
+        <div className="fixed inset-0 z-40 bg-white/95 backdrop-blur-md pt-32 px-6 md:hidden overflow-y-auto">
+          <div className="flex flex-col gap-4 max-w-sm mx-auto">
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path || (item.path !== '/' && location.pathname.startsWith(item.path));
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`flex items-center gap-4 px-6 py-4 rounded-2xl text-lg font-bold transition-all ${
+                    isActive ? 'bg-gray-900 text-white shadow-lg transform -translate-y-1' : 'bg-gray-50 text-gray-800 border border-gray-100 hover:bg-gray-100'
+                  }`}
+                >
+                  <div className={`p-2 rounded-full ${isActive ? 'bg-white/20' : 'bg-white shadow-sm'}`}>
+                    <item.icon className={`w-6 h-6 ${isActive ? 'text-white' : 'text-gray-500'}`} />
+                  </div>
+                  {item.name}
+                </Link>
+              );
+            })}
+            <button 
+              onClick={() => { setIsOpen(false); navigate('/booking'); }}
+              className="mt-6 flex items-center justify-center gap-2 w-full bg-primary text-white px-6 py-5 rounded-2xl font-bold text-lg shadow-xl transform active:scale-95 transition-transform"
+            >
+              <Calendar className="w-6 h-6" />
+              {t('navbar.bookNow', 'Book Now')}
+            </button>
           </div>
         </div>
-
-        {isOpen && (
-            <div className="sm:hidden">
-              <div className="pt-2 pb-3 space-y-1">
-                {navItems.map((item) => (
-                    <Link
-                        key={item.name}
-                        to={item.path}
-                        className="text-gray-500 hover:text-primary block px-3 py-2 rounded-md text-base font-medium"
-                        onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                ))}
-              </div>
-              <div className="pt-4 pb-3 border-t border-gray-200">
-                <div className="flex items-center px-4">
-                  <button onClick={handleBookNowClick} className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded transition duration-300">
-                    {t('navbar.bookNow')}
-                  </button>
-                </div>
-                <div className="mt-3 px-2 space-y-1">
-                  <select
-                      onChange={(e) => changeLanguage(e.target.value)}
-                      value={currentLang.code}
-                      className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md"
-                  >
-                    {languages.map((lang) => (
-                        <option key={lang.code} value={lang.code}>
-                          {lang.name}
-                        </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-            </div>
-        )}
-      </nav>
+      )}
+    </>
   );
 };
 

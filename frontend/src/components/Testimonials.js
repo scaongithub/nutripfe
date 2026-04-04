@@ -47,40 +47,41 @@ const Testimonials = () => {
   };
 
   return (
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+      <section className="bg-gray-50/50 py-16 sm:py-24 relative overflow-hidden">
+        {/* Subtle background blob */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full filter blur-3xl pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl tracking-tight">
               {t('testimonials.title', 'What Our Clients Say')}
             </h2>
-            <p className="mt-4 text-lg text-gray-500">
+            <p className="mt-4 text-xl text-gray-600">
               {t('testimonials.subtitle', 'Success stories from around the world')}
             </p>
           </div>
-          <div className="mt-12">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {testimonials.map((testimonial, index) => (
                   <div key={index} className="pt-6">
-                    <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                      <div className="-mt-6">
-                        <div className="flex flex-col items-center">
-                      <span className="inline-flex items-center justify-center p-3 bg-primary rounded-md shadow-lg">
-                        <span className="text-2xl">{testimonial.flag}</span>
-                      </span>
-                          <h3 className="mt-4 text-lg font-medium text-gray-900 tracking-tight">
-                            {testimonial.name}
-                          </h3>
-                          <p className="text-sm text-gray-500">{testimonial.location}</p>
-                        </div>
-                        <div className="mt-4">
-                          <div className="relative">
-                            <span className="text-4xl text-primary opacity-25 absolute top-0 left-0">"</span>
-                            <p className="text-base text-gray-500 italic px-6 pt-4">
-                              {getLocalizedContent(testimonial)}
-                            </p>
-                            <span className="text-4xl text-primary opacity-25 absolute bottom-0 right-0">"</span>
-                          </div>
-                        </div>
+                    <div className="bg-white rounded-[2rem] px-8 pb-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 flex flex-col h-full relative mt-6">
+                      <div className="-mt-8 flex justify-center">
+                        <span className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-lg border border-gray-50 text-3xl">
+                          {testimonial.flag}
+                        </span>
+                      </div>
+                      <div className="mt-4 text-center">
+                         <h3 className="text-lg font-bold text-gray-900">
+                           {testimonial.name}
+                         </h3>
+                         <p className="text-sm text-gray-500 font-medium">{testimonial.location}</p>
+                      </div>
+                      <div className="mt-6 flex-grow relative">
+                        <span className="text-5xl text-primary/20 absolute -top-4 -left-2 font-serif">"</span>
+                        <p className="text-base text-gray-600 italic px-4 pb-4 leading-relaxed relative z-10">
+                          {getLocalizedContent(testimonial)}
+                        </p>
+                        <span className="text-5xl text-primary/20 absolute bottom-0 right-0 font-serif leading-none">"</span>
                       </div>
                     </div>
                   </div>

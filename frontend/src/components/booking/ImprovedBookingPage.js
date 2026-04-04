@@ -70,13 +70,6 @@ const ImprovedBookingPage = () => {
         setShowSuccess(true);
     };
 
-    const handlePayment = () => {
-        const amount = bookingData.duration === 30 ? 50 : 100;
-        // Replace with your PayPal username
-        const paypalLink = `https://www.paypal.com/paypalme/carloascarsini/${amount}`;
-        window.open(paypalLink, '_blank');
-        handleSubmit();
-    };
 
     const handleStripePayment = async () => {
         setSubmitting(true);

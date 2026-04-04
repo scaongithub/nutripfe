@@ -15,7 +15,7 @@ const ImprovedBookingPage = () => {
         phone: '',
         concerns: ''
     });
-    const [showSuccess, setShowSuccess] = useState(false);
+
     const [submitting, setSubmitting] = useState(false);
     const [serverError, setServerError] = useState('');
 
@@ -64,11 +64,6 @@ const ImprovedBookingPage = () => {
         return bookingData.date && date.toDateString() === bookingData.date.toDateString();
     };
 
-    const handleSubmit = () => {
-        // In a real app, you would submit the form data to your backend
-        console.log('Booking submitted:', bookingData);
-        setShowSuccess(true);
-    };
 
 
     const handleStripePayment = async () => {
@@ -147,64 +142,6 @@ const ImprovedBookingPage = () => {
         );
     };
 
-    if (showSuccess) {
-        return (
-            <div className="max-w-4xl mx-auto px-4 py-12 flex flex-col items-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                    <Check className="w-8 h-8 text-green-600" />
-                </div>
-                <h2 className="text-2xl font-bold text-center mb-4">Booking Confirmed!</h2>
-                <p className="text-gray-600 text-center mb-8">
-                    We've sent a confirmation email to {bookingData.email}
-                </p>
-
-                <div className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-50 w-full max-w-md">
-                    <h3 className="font-bold text-xl mb-6 text-gray-900 border-b border-gray-100 pb-4">Appointment Details</h3>
-
-                    <div className="space-y-4">
-                        <div className="flex items-center">
-                            <Calendar className="text-primary w-5 h-5 mr-3" />
-                            <div>
-                                <p className="text-sm text-gray-500">Date</p>
-                                <p className="font-medium">{bookingData.date && formatDate(bookingData.date)}</p>
-                            </div>
-                        </div>
-
-                        <div className="flex items-center">
-                            <Clock className="text-primary w-5 h-5 mr-3" />
-                            <div>
-                                <p className="text-sm text-gray-500">Time</p>
-                                <p className="font-medium">{bookingData.time}</p>
-                            </div>
-                        </div>
-
-                        <div className="flex items-center">
-                            <Timer className="text-primary w-5 h-5 mr-3" />
-                            <div>
-                                <p className="text-sm text-gray-500">Duration</p>
-                                <p className="font-medium">{bookingData.duration} minutes</p>
-                            </div>
-                        </div>
-
-                        <div className="flex items-center">
-                            <Video className="text-primary w-5 h-5 mr-3" />
-                            <div>
-                                <p className="text-sm text-gray-500">Meeting Link</p>
-                                <p className="font-medium text-primary">Check your email for details</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <button
-                    onClick={() => window.location.href = '/'}
-                    className="mt-10 bg-primary hover:bg-blue-600 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1"
-                >
-                    Return to Home
-                </button>
-            </div>
-        );
-    }
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-10">
